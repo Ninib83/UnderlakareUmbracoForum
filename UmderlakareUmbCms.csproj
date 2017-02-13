@@ -44,6 +44,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.3.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.1\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -75,6 +87,10 @@
     <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
       <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Dialogue.Logic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UnderlakareCmsDialogue\UnderlakareCmsDialogue\bin\Dialogue.Logic.dll</HintPath>
     </Reference>
     <Reference Include="Examine, Version=0.1.80.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Examine.0.1.80\lib\net45\Examine.dll</HintPath>
@@ -405,9 +421,44 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationStart.cs" />
     <Compile Include="App_Start\UmbracoAuthTokenServerExtensions.cs" />
     <Compile Include="App_Start\UmbracoCustomOwinStartup.cs" />
     <Compile Include="App_Start\UmbracoStandardOwinStartup.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Business\Entities\ApiResponse.cs" />
+    <Compile Include="Business\Entities\Category.cs" />
+    <Compile Include="Business\Entities\Interfaces\ICategory.cs" />
+    <Compile Include="Business\Entities\Interfaces\IMember.cs" />
+    <Compile Include="Business\Entities\Interfaces\IPaging.cs" />
+    <Compile Include="Business\Entities\Interfaces\IPost.cs" />
+    <Compile Include="Business\Entities\Interfaces\IPostPaging.cs" />
+    <Compile Include="Business\Entities\Interfaces\ITopic.cs" />
+    <Compile Include="Business\Entities\Interfaces\ITopicPaging.cs" />
+    <Compile Include="Business\Entities\Member.cs" />
+    <Compile Include="Business\Entities\Paging.cs" />
+    <Compile Include="Business\Entities\Post.cs" />
+    <Compile Include="Business\Entities\PostPaging.cs" />
+    <Compile Include="Business\Entities\Topic.cs" />
+    <Compile Include="Business\Entities\TopicPaging.cs" />
+    <Compile Include="Business\Helpers\PagingHelper.cs" />
+    <Compile Include="Business\Registries\DependencyRegistry.cs" />
+    <Compile Include="Business\Services\CategoryService.cs" />
+    <Compile Include="Business\Services\Interfaces\ICategorysService.cs" />
+    <Compile Include="Business\Services\Interfaces\IMembersService.cs" />
+    <Compile Include="Business\Services\Interfaces\IPostsService.cs" />
+    <Compile Include="Business\Services\Interfaces\ITopicsService.cs" />
+    <Compile Include="Business\Services\MemberService.cs" />
+    <Compile Include="Business\Services\PostService.cs" />
+    <Compile Include="Business\Services\TopicService.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ForumTopicController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
