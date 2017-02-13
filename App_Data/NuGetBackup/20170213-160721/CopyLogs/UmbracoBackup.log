@@ -1,0 +1,26 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : den 13 februari 2017 16:07:21
+   Source : C:\users\ninibozmen\documents\visual studio 2015\Projects\UmderlakareUmbCms\UmderlakareUmbCms\Umbraco\
+     Dest : C:\users\ninibozmen\documents\visual studio 2015\Projects\UmderlakareUmbCms\UmderlakareUmbCms\App_Data\NuGetBackup\20170213-160721\Umbraco\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                   0	C:\users\ninibozmen\documents\visual studio 2015\Projects\UmderlakareUmbCms\UmderlakareUmbCms\Umbraco\
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         0
+   Files :         0         0         0         0         0         0
+   Bytes :         0         0         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : den 13 februari 2017 16:07:21
+
