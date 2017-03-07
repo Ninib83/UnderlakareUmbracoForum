@@ -17,6 +17,28 @@ namespace UmderlakareUmbCms.Business.Services
             _memberService = memberService;
         }
 
+        // fixa funktionen(Vet ej om det behövs)
+        #region Get All Members Request
+
+        //public IEnumerable<Category> GetAllMembers()
+        //{
+        //    List<Member> totalMemberList = new List<Member>();
+
+        //    var members = _memberService.GetAll();
+
+        //    foreach (var m in members)
+        //    {
+        //        var member = new Member(m.Id, m.Name, null, null, null, null, null, null, null, null);
+        //        totalMemberList.Add(member);
+        //    }
+
+        //    return totalMemberList;
+        //}
+
+        #endregion
+
+        //Klar
+        #region Get Member By Email Request
         public IMember GetMemberByEmail(string email)
         {
             var member = _memberService.GetByEmail(email);
@@ -25,12 +47,14 @@ namespace UmderlakareUmbCms.Business.Services
                               member.Email, 
                               member.Avatar, 
                               member.DateCreated, 
-                              member.LastLoginDate, 
-                              member.Slug,
-                              member.PostCount,
-                              member.Url,
-                              member.Signature);
+                              member.LastLoginDate,
+                              member.PostCount);
         }
+
+        #endregion
+
+        //Klar
+        #region Get Member By Id Request
 
         public IMember GetMemberById(int id)
         {
@@ -41,11 +65,13 @@ namespace UmderlakareUmbCms.Business.Services
                               member.Avatar, 
                               member.DateCreated, 
                               member.LastLoginDate, 
-                              member.Slug,
-                              member.PostCount,
-                              member.Url,
-                              member.Signature);
+                              member.PostCount);
         }
+
+        #endregion
+
+        //Klar
+        #region Get Member By UserName Request
 
         public IMember GetMemberByUsername(string username)
         {
@@ -56,10 +82,8 @@ namespace UmderlakareUmbCms.Business.Services
                               member.Avatar, 
                               member.DateCreated, 
                               member.LastLoginDate, 
-                              member.Slug,
-                              member.PostCount,
-                              member.Url,
-                              member.Signature);
+                              member.PostCount);
         }
+        #endregion
     }
 }

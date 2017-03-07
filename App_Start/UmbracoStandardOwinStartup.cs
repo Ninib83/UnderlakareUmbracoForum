@@ -6,6 +6,7 @@ using Umbraco.Web;
 using Umbraco.Web.Security.Identity;
 using Umbraco.IdentityExtensions;
 using UmderlakareUmbCms;
+using System.Web.Cors;
 
 //To use this startup class, change the appSetting value in the web.config called 
 // "owin:appStartup" to be "UmbracoStandardOwinStartup"
@@ -46,28 +47,28 @@ namespace UmderlakareUmbCms
              *  
              */
 
-            /*
-             * To configure a simple auth token server for the back office:
-             *             
-             * By default the CORS policy is to allow all requests
-             * 
-             *      app.UseUmbracoBackOfficeTokenAuth(new BackOfficeAuthServerProviderOptions());
-             *      
-             * If you want to have a custom CORS policy for the token server you can provide
-             * a custom CORS policy, example: 
-             * 
-             *      app.UseUmbracoBackOfficeTokenAuth(
-             *          new BackOfficeAuthServerProviderOptions()
-             *              {
-             *             		//Modify the CorsPolicy as required
-             *                  CorsPolicy = new CorsPolicy()
-             *                  {
-             *                      AllowAnyHeader = true,
-             *                      AllowAnyMethod = true,
-             *                      Origins = { "http://mywebsite.com" }                
-             *                  }
-             *              });
-             */
+            
+              //To configure a simple auth token server for the back office:
+                          
+              //By default the CORS policy is to allow all requests
+              
+                   app.UseUmbracoBackOfficeTokenAuth(new BackOfficeAuthServerProviderOptions());
+                   
+             // If you want to have a custom CORS policy for the token server you can provide
+             // a custom CORS policy, example: 
+              
+                   app.UseUmbracoBackOfficeTokenAuth(
+                       new BackOfficeAuthServerProviderOptions()
+                           {
+                          		//Modify the CorsPolicy as required
+                               CorsPolicy = new CorsPolicy()
+                               {
+                                   AllowAnyHeader = true,
+                                   AllowAnyMethod = true,
+                                   Origins = { "http://underlakare.se" }                
+                               }
+                           });
+             
 
         }
     }

@@ -9,7 +9,7 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
 {
     public interface IMembersService
     {
-        //IMember GetAllMembers();
+        //IEnumerable<Member> GetAllMembers();
         IMember GetMemberById(int id);
         IMember GetMemberByUsername(string username);
         IMember GetMemberByEmail(string email);

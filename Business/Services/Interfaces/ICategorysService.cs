@@ -9,7 +9,15 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
 {
     public interface ICategorysService
     {
-        ICategory GetCategoryById(int id);
-        IEnumerable<Category> GetAllSubCategories(Guid parentId);
+        IEnumerable<MainCategory> GetAllMainAndSubCategories();
+        IEnumerable<SubCategory> GetAllSubCategories();
+        IMainCategory GetMainCategoryById(int id);
+        ISubCategoy GetSubCategoryById(int id);
+
+        //ITopicPaging GetTopicsByCategory(int page, int size, int categoryId);
+
+
+
+
     }
 }

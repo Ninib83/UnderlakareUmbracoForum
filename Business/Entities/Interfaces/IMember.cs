@@ -13,9 +13,6 @@ namespace UmderlakareUmbCms.Business.Entities.Interfaces
         string Avatar { get; }
         DateTime? DateCreated { get; }
         DateTime? LastLoginDate { get; }
-        string Slug { get; }
         int PostCount { get; }
-        string Url { get; }
-        string Signature { get; }
     }
 }

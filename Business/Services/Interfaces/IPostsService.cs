@@ -10,6 +10,11 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
     public interface IPostsService
     {
         List<Post> GetPostByMemberId(int memberId);
+        //List<Post> GetPostsByTopicId(Guid topicId);
+        IEnumerable<Post> GetAllPosts();
+
+        void AddPost(CreatePostViewModel vm);
+
 
     }
 }

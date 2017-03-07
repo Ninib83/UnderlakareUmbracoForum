@@ -15,6 +15,7 @@ namespace UmderlakareUmbCms.Controllers
             _contentService = contentService;
         }
 
+        #region HttpGet
 
         [HttpGet]
         [Route("{id:Guid}")]
@@ -37,6 +38,8 @@ namespace UmderlakareUmbCms.Controllers
 
             }
         }
+
+        #endregion
 
     }
 }

@@ -8,22 +8,54 @@ namespace UmderlakareUmbCms.Business.Entities
 {
     public class Topic : ITopic
     {
-        public Topic(Guid id, string name, int views, int memberId, DateTime createDate, string slug)
+        public Topic(Guid id, int memberId, int categoryId, int views, string name, DateTime createDate, List<Post> posts)
         {
             Id = id;
-            Name = name;
-            Views = views;
+            CategoryId = categoryId;
             MemberId = memberId;
-            CreateDate = createDate;
-            Slug = slug;
+            Views = views;
+            Name = name;
+            CreateDate = createDate;          
+            Posts = posts;
+            
+            
 
         }
-        public Guid Id { get; }
-        public string Name { get; }
-        public int Views { get; }
-        public int MemberId { get; }
-        public DateTime? CreateDate { get; }
-        public  string Slug { get; }
+        public Guid Id
+        {
+            get;
+        }
+
+        public int MemberId
+        {
+            get;
+        }
+
+        public int CategoryId
+        {
+            get;
+        }
+
+        public int Views
+        {
+            get;
+        }
+
+        public string Name
+        {
+            get;
+        }
+
+        public DateTime CreateDate
+        {
+            get;
+        }
+
+        public List<Post> Posts
+        {
+            get;
+            
+        }
 
     }
 }

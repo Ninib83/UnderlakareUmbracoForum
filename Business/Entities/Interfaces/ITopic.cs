@@ -10,10 +10,11 @@ namespace UmderlakareUmbCms.Business.Entities.Interfaces
     {
         Guid Id { get; }
         int MemberId { get; }
-        string Name { get;}
+        int CategoryId { get; }
         int Views { get; }
-        DateTime? CreateDate { get; }
-        string Slug { get; }
+        string Name { get;}
+        DateTime CreateDate { get; }
+        List<Post> Posts { get; }
 
     }
 }

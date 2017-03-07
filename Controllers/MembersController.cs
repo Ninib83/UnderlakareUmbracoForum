@@ -19,6 +19,8 @@ namespace UmderlakareUmbCms.Controllers
             _membersService = membersService;
         }
 
+        #region HttpGet
+
         //public IHttpActionResult GetAll()
         //{
         //    try
@@ -83,5 +85,7 @@ namespace UmderlakareUmbCms.Controllers
                 return Content(HttpStatusCode.InternalServerError, "Något har hänt!");
             }
         }
+
+        #endregion
     }
 }

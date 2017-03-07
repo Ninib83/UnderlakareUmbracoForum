@@ -8,16 +8,7 @@ namespace UmderlakareUmbCms.Business.Entities
 {
     public class Member : IMember
     {
-        public Member(int id, 
-                      string username, 
-                      string email, 
-                      string avatar, 
-                      DateTime? dateCreated, 
-                      DateTime? lastLoginDate, 
-                      string slug, 
-                      int postCount,
-                      string url,
-                      string signature)
+        public Member(int id, string username, string email, string avatar, DateTime? dateCreated,  DateTime? lastLoginDate, int postCount)
         {
             Id = id;
             UserName = username;
@@ -26,17 +17,6 @@ namespace UmderlakareUmbCms.Business.Entities
             DateCreated = dateCreated;
             LastLoginDate = lastLoginDate;
             PostCount = postCount;
-            Url = url;
-        }
-
-        public string Avatar
-        {
-            get;
-        }
-
-        public string Email
-        {
-            get;
         }
 
         public int Id
@@ -48,6 +28,17 @@ namespace UmderlakareUmbCms.Business.Entities
         {
             get;
         }
+
+        public string Email
+        {
+            get;
+        }
+
+        public string Avatar
+        {
+            get;
+        }
+
         public DateTime? DateCreated
         {
             get;
@@ -56,19 +47,8 @@ namespace UmderlakareUmbCms.Business.Entities
         {
             get;
         }
-        public string Slug
-        {
-            get;
-        }
+
         public int PostCount
-        {
-            get;
-        }
-        public string Url
-        {
-            get;
-        }
-        public string Signature
         {
             get;
         }

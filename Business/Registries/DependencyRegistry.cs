@@ -36,11 +36,11 @@ namespace UmderlakareUmbCms.Business.Registries
                 .As<IPostsService>()
                 .WithParameter("postService", ServiceFactory.PostService);
 
-            builder.RegisterType<Services.CategoryService>().Named<ICategorysService>("categoryService");
-             
-            //builder.RegisterType<Services.CategoryService>()
-            //    .As<ICategorysService>()
-            //    .WithParameter("categoryService", ServiceFactory.CategoryService);
+            builder.RegisterType<Services.CategoryService>()
+               .As<ICategorysService>();
+            //.WithParameter("categoryService", ServiceFactory.CategoryService);
+
+
 
 
             builder.RegisterInstance(applicationContext.Services.ContentService).As<IContentService>();

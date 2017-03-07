@@ -209,6 +209,10 @@
       <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\SQLCE4Umbraco.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.5.3\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
       <Private>True</Private>
@@ -338,6 +342,10 @@
       <HintPath>..\packages\UrlRewritingNet.2.0.7\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebApi.Hal, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WebApi.Hal.2.5.0\lib\net45\WebApi.Hal.dll</HintPath>
       <Private>True</Private>
@@ -352,6 +360,70 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Dialogue\BackOffice\PropertyEditors\permissions.controller.js" />
+    <Content Include="App_Plugins\Dialogue\BackOffice\PropertyEditors\permissions.html" />
+    <Content Include="App_Plugins\Dialogue\BackOffice\PropertyEditors\themepicker.controller.js" />
+    <Content Include="App_Plugins\Dialogue\BackOffice\PropertyEditors\themepicker.html" />
+    <Content Include="App_Plugins\Dialogue\Content\Css\bootstrap-theme.css" />
+    <Content Include="App_Plugins\Dialogue\Content\Css\bootstrap-theme.min.css" />
+    <Content Include="App_Plugins\Dialogue\Content\Css\bootstrap.css" />
+    <Content Include="App_Plugins\Dialogue\Content\Css\bootstrap.min.css" />
+    <Content Include="App_Plugins\Dialogue\Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\arrow-spinner-blue.gif" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\MemberForAYearBadge.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\MentionsUmbracoBadge.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\OneThousandPoints.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\padawan.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\PosterMarkAsSolutionBadge.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\PosterVoteUpBadge.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\TheGrouch.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\UserMarkAsSolutionBadge.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\badges\UserVoteUpBadge.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Images\blank.gif" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\bootstrap.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\bootstrap.min.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\blank.gif" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\fancybox_loading.gif" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\fancybox_overlay.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\fancybox_sprite.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\jquery.fancybox.css" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\jquery.fancybox.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\general.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\html5shiv.js" />
+    <None Include="App_Plugins\Dialogue\Content\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery-1.10.2.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery-1.10.2.min.js" />
+    <None Include="App_Plugins\Dialogue\Content\Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery-1.9.1.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery-1.9.1.min.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="App_Plugins\Dialogue\Content\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery.validate.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery.validate.min.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\markdown\Markdown.Converter.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\markdown\markdown.css" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\markdown\Markdown.Editor.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\markdown\Markdown.Sanitizer.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\markdown\node-pagedown.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\markdown\wmd-buttons.png" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\respond.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\respond.min.js" />
+    <Content Include="App_Plugins\Dialogue\EmailTemplates\EmailNotification.htm" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Content\Css\styles.css" />
     <Content Include="packages.config" />
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
@@ -386,6 +458,67 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="App_Plugins\Dialogue\Content\Css\bootstrap-theme.css.map" />
+    <Content Include="App_Plugins\Dialogue\Content\Css\bootstrap.css.map" />
+    <Content Include="App_Plugins\Dialogue\Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Plugins\Dialogue\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Plugins\Dialogue\Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="App_Plugins\Dialogue\Content\Scripts\jquery-1.9.1.min.map" />
+    <Content Include="App_Plugins\Dialogue\package.manifest" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Activity.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Authorise.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Badges.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Category.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\ChangePassword.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Create.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Dialogue.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\EditMember.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\EditPost.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Favourites.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Leaderboard.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Login.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Master.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\MemberProfile.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\OneCol.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\OneColThin.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\PostReport.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\PrivateMessages.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\PrivateMessagesCreate.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\PrivateMessagesSent.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\PrivateMessageView.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Register.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\ReportMember.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Search.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\AjaxMorePosts.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\CreateNewPost.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\CreateTopicButton.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\CurrentWeekHighPointUsers.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\ForgotPasswordForm.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\GetCurrentActiveMembers.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\GetMainStats.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\GetMemberDiscussions.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\GetThisWeeksTopEarners.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\GetThisYearsTopEarners.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\GetTopicBreadcrumb.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\LatestTopics.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\LogOnForm.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\Poll.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\Post.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\PostModeration.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\RegisterForm.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\SideAdminPanel.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\SideCategories.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\SocialButtons.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\TopicRow.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\TopicRowSlim.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\_EmailConfirmationNotice.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Shared\_GenericMessage.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\SpamOverview.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Testing.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Topic.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\TwoCol.cshtml" />
+    <Content Include="App_Plugins\Dialogue\Themes\Default\Views\Web.Config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -422,23 +555,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationStart.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\UmbracoAuthTokenServerExtensions.cs" />
     <Compile Include="App_Start\UmbracoCustomOwinStartup.cs" />
     <Compile Include="App_Start\UmbracoStandardOwinStartup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\Entities\ApiResponse.cs" />
     <Compile Include="Business\Entities\Category.cs" />
+    <Compile Include="Business\Entities\CreatePostViewModel.cs" />
+    <Compile Include="Business\Entities\CreateTopicViewModel.cs" />
     <Compile Include="Business\Entities\Interfaces\ICategory.cs" />
+    <Compile Include="Business\Entities\Interfaces\ILastPost.cs" />
+    <Compile Include="Business\Entities\Interfaces\ILastPostMember.cs" />
+    <Compile Include="Business\Entities\Interfaces\ILastTopic.cs" />
+    <Compile Include="Business\Entities\Interfaces\IMainCategory.cs" />
     <Compile Include="Business\Entities\Interfaces\IMember.cs" />
     <Compile Include="Business\Entities\Interfaces\IPaging.cs" />
     <Compile Include="Business\Entities\Interfaces\IPost.cs" />
     <Compile Include="Business\Entities\Interfaces\IPostPaging.cs" />
+    <Compile Include="Business\Entities\Interfaces\ISubCategoy.cs" />
     <Compile Include="Business\Entities\Interfaces\ITopic.cs" />
     <Compile Include="Business\Entities\Interfaces\ITopicPaging.cs" />
+    <Compile Include="Business\Entities\LastPost.cs" />
+    <Compile Include="Business\Entities\LastPostMember.cs" />
+    <Compile Include="Business\Entities\LastTopic.cs" />
+    <Compile Include="Business\Entities\MainCategory.cs" />
     <Compile Include="Business\Entities\Member.cs" />
     <Compile Include="Business\Entities\Paging.cs" />
     <Compile Include="Business\Entities\Post.cs" />
     <Compile Include="Business\Entities\PostPaging.cs" />
+    <Compile Include="Business\Entities\SubCategory.cs" />
     <Compile Include="Business\Entities\Topic.cs" />
     <Compile Include="Business\Entities\TopicPaging.cs" />
     <Compile Include="Business\Helpers\PagingHelper.cs" />

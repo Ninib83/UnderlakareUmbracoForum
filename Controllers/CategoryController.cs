@@ -9,25 +9,67 @@ using UmderlakareUmbCms.Business.Services.Interfaces;
 
 namespace UmderlakareUmbCms.Controllers
 {
-    [RoutePrefix("api/v1/categorys")]
+    [RoutePrefix("api/v1/categories")]
     public class CategoryController : ApiController
     {
-        private  ICategorysService _categorysService;
-        //CategoryService _categorysService = new CategoryService(new Dialogue.Logic.Services.CategoryService());
+
+        // Fixa Dependency injection
+
+
+        //private  ICategorysService _categorysService;
+        CategoryService _categorysService = new CategoryService(new Dialogue.Logic.Services.CategoryService());
 
         
-        public CategoryController(ICategorysService categorysService) : base()
+        public CategoryController()//ICategorysService categorysService) 
         {
-            _categorysService = categorysService;
+           // _categorysService = categorysService;
         }
 
+        #region HttpGet
+
         [HttpGet]
-        [Route("{id:int}")]
+        [Route("AllCategories")]
+        public IHttpActionResult GetAllMainAndSubCategories()
+        {
+            try
+            {
+                var parentCat = _categorysService.GetAllMainAndSubCategories();
+                return Ok(parentCat);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+                return Content(HttpStatusCode.InternalServerError, "Något har hänt!");
+            }
+        }
+
+
+        [HttpGet]
+        [Route("subCategories")]
+        public IHttpActionResult GetAllSubCategories()
+        {
+            try
+            {
+                var subCat = _categorysService.GetAllSubCategories();
+                return Ok(subCat);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex);
+                return Content(HttpStatusCode.InternalServerError, "Något har hänt!");
+            }
+        }
+
+
+        [HttpGet]
+        [Route("mainCategory/{id:int}")]
         public IHttpActionResult GetCategoryById(int id)
         {
             try
             {
-                var category = _categorysService.GetCategoryById(id);
+                var category = _categorysService.GetMainCategoryById(id);
                 return Ok(category);
             }
             catch (Exception ex)
@@ -37,22 +79,24 @@ namespace UmderlakareUmbCms.Controllers
                 return Content(HttpStatusCode.InternalServerError, "Något har hänt!");
             }
         }
+
         [HttpGet]
-        [Route("{parentId:guid}")]
-        public IHttpActionResult GetSubCatByParentId(Guid parentId)
+        [Route("subCategory/{id:int}")]
+        public IHttpActionResult GetSubCategoryById(int id)
         {
             try
             {
-                var subCat = _categorysService.GetAllSubCategories(parentId);
-                return Ok(subCat);
-
+                var category = _categorysService.GetSubCategoryById(id);
+                return Ok(category);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
+                Console.WriteLine(ex);
                 return Content(HttpStatusCode.InternalServerError, "Något har hänt!");
-
             }
         }
+
+        #endregion
     }
 }

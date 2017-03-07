@@ -9,11 +9,30 @@ namespace UmderlakareUmbCms.Business.Entities
 {
     public class Post : IPost
     {
-        public Post(int memberId, string postContent)
+
+        public Post(Guid id, int memberId, string postContent, DateTime dateCreated, Guid topicId, string userName)
         {
+            Id = id;
             MemberId = memberId;
             PostContent = postContent;
+            DateCreated = dateCreated;
+            TopicId = topicId;
+            UserName = userName;
+
         }
+
+        public DateTime DateCreated
+        {
+            get;
+            
+        }
+
+        public Guid Id
+        {
+            get;
+           
+        }
+
         public int MemberId
         {
             get;
@@ -24,6 +43,17 @@ namespace UmderlakareUmbCms.Business.Entities
         {
             get;
             
+        }
+
+        public Guid TopicId
+        {
+            get;
+            
+        }
+
+        public string UserName
+        {
+            get;
         }
     }
 }

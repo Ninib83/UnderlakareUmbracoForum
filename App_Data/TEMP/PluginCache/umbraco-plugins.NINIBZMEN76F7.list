@@ -2,9 +2,9 @@
 <plugins>
   <baseType type="umbraco.interfaces.IApplicationStartupHandler" resolutionType="FindAllTypes">
     <add type="Dialogue.Logic.Events.UmbracoEvents, Dialogue.Logic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="UmderlakareUmbCms.ApplicationStart, UmderlakareUmbCms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationRegistrar, businesslogic, Version=1.0.6247.17498, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationTreeRegistrar, businesslogic, Version=1.0.6247.17498, Culture=neutral, PublicKeyToken=null" />
+    <add type="UmderlakareUmbCms.ApplicationStart, UmderlakareUmbCms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.BatchedDatabaseServerMessengerStartup, umbraco, Version=1.0.6247.17502, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Routing.RedirectTrackingEventHandler, umbraco, Version=1.0.6247.17502, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Models.Mapping.RelationModelMapper, umbraco, Version=1.0.6247.17502, Culture=neutral, PublicKeyToken=null" />
@@ -47,13 +47,13 @@
     <add type="Umbraco.Core.Models.Identity.IdentityModelMappings, Umbraco.Core, Version=1.0.6247.17495, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Core.Strategies.RelateOnCopyHandler, Umbraco.Core, Version=1.0.6247.17495, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Core.Strategies.RelateOnTrashHandler, Umbraco.Core, Version=1.0.6247.17495, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.providers.members.MembershipEventHandler, umbraco.providers, Version=1.0.6247.17501, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.ModelsBuilder.Umbraco.ModelsBuilderApplication, Umbraco.ModelsBuilder, Version=3.0.5.96, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.RestApi.Models.MediaModelMapper, Umbraco.RestApi, Version=1.0.5779.34030, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.RestApi.Models.MemberModelMapper, Umbraco.RestApi, Version=1.0.5779.34030, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.RestApi.Models.RelationModelMapper, Umbraco.RestApi, Version=1.0.5779.34030, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.RestApi.Models.ContentModelMapper, Umbraco.RestApi, Version=1.0.5779.34030, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.RestApi.UmbracoRestStartup, Umbraco.RestApi, Version=1.0.5779.34030, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.providers.members.MembershipEventHandler, umbraco.providers, Version=1.0.6247.17501, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.6247.17504, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter" resolutionType="FindAllTypes" />
