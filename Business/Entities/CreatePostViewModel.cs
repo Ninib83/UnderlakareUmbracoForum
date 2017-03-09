@@ -14,5 +14,8 @@ namespace UmderlakareUmbCms.Business.Entities
         public int MemberId { get; set; }
 
 
+
+
+
     }
 }

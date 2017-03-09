@@ -116,6 +116,11 @@ namespace UmderlakareUmbCms.Controllers
         #endregion
 
         #region HttpPut
+
+
+
+
+
         #endregion
 
         #region HttpPost
@@ -124,33 +129,26 @@ namespace UmderlakareUmbCms.Controllers
         [Route("add")]
         public IHttpActionResult Add(CreateTopicViewModel vm)
         {
-            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
-            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
-            {
+
                 try
                 {
-                    // Do all logic here
-                    _topicsService.AddTopi(vm);
-                    // Commit the transaction
-                   unitOfWork.Commit();
-                    //unitOfWork.SaveChanges();
+                    
+                    _topicsService.AddTopic(vm);
+
+                    
                     return Ok();
                 }
                 catch (Exception)
                 {
-                    // Roll back database changes 
-                    unitOfWork.Rollback();
-                    // Log the error
-                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
 
-                    // Do what you want
+                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
                 }
-            }
+            
 
         }
-
-
         #endregion
+
+
 
         #region HttpDelete
 
@@ -158,21 +156,29 @@ namespace UmderlakareUmbCms.Controllers
         [Route("{id:Guid}")]
         public IHttpActionResult Delete(Guid id)
         {
-
-
-            try
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
             {
+                try
+                {
 
-                _topicsService.Delete(id);              
-                return Ok();
+                    _topicsService.Delete(id);
+                    unitOfWork.Commit();
+                    return Ok();
+                }
+                catch (Exception)
+                {
+
+
+
+                    unitOfWork.Rollback();
+                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
+
+                }
+
             }
-            catch (Exception e)
-            {
 
 
-                Console.WriteLine(e);
-                return Content(HttpStatusCode.InternalServerError, "Något gick fel");
-            }
         }
         #endregion
 

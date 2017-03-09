@@ -59,6 +59,22 @@ namespace UnderlakareCmsDialogue.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("getPostById/{id:Guid}")]
+        public IHttpActionResult GetPostById(Guid id)
+        {
+            try
+            {
+                var posts = _postsService.GetPostById(id);
+                return Ok(posts);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return Content(HttpStatusCode.InternalServerError, "Något har hänt!");
+            }
+        }
+
 
 
         [HttpGet]
@@ -81,6 +97,9 @@ namespace UnderlakareCmsDialogue.Controllers
 
         #endregion
 
+        #region HttpPost
+        
+
         [HttpPost]
         [Route("addpost")]
         public IHttpActionResult Add(CreatePostViewModel vm)
@@ -90,26 +109,86 @@ namespace UnderlakareCmsDialogue.Controllers
             {
                 try
                 {
-                    // Do all logic here
+
                     _postsService.AddPost(vm);
-                    // Commit the transaction
-                   
-                     //unitOfWork.Commit();
-                    unitOfWork.SaveChanges();
+                    unitOfWork.Commit();
+                    
                     return Ok();
                 }
                 catch (Exception)
                 {
-                    // Roll back database changes 
+ 
                     unitOfWork.Rollback();
-                    // Log the error
                     return Content(HttpStatusCode.InternalServerError, "something went wrong");
-
-                    // Do what you want
                 }
             }
 
         }
+
+        #endregion
+
+        #region HttpPut
+
+
+        [HttpPut]
+        [Route("addpost")]
+        public IHttpActionResult Edit(CreatePostViewModel vm)
+        {
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            {
+                try
+                {
+
+                    _postsService.AddPost(vm);
+                    unitOfWork.Commit();
+
+                    return Ok();
+                }
+                catch (Exception)
+                {
+
+                    unitOfWork.Rollback();
+                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
+                }
+            }
+
+        }
+
+        #endregion
+
+        #region HttpDelete
+
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public IHttpActionResult Delete(Guid id)
+        {
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            {
+                try
+                {
+
+                    _postsService.Delete(id);
+                    unitOfWork.Commit();
+                    return Ok();
+                }
+                catch (Exception)
+                {
+
+
+
+                    unitOfWork.Rollback();
+                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
+
+                }
+
+            }
+
+
+        }
+
+        #endregion
 
     }
 }

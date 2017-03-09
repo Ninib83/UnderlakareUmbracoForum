@@ -22,7 +22,9 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
 
 
         void Delete(Guid id);
-        void AddTopi(CreateTopicViewModel vm);
+        void AddTopic(CreateTopicViewModel vm);
+
+        //void AddLastPost(CreateTopicViewModel vm);
         //Dialogue.Logic.Models.Topic GetByIdForDelete(Guid id);
     }
 

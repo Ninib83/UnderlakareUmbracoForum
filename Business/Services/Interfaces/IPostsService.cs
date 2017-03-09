@@ -13,6 +13,12 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
         //List<Post> GetPostsByTopicId(Guid topicId);
         IEnumerable<Post> GetAllPosts();
 
+        Post GetPostById(Guid id);
+
+        void Delete(Guid id);
+
+        void Edit(Guid id, CreatePostViewModel vm);
+
         void AddPost(CreatePostViewModel vm);
 
 

@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Dialogue.Logic.Constants;
+using Dialogue.Logic.Data.Context;
+using Dialogue.Logic.Data.UnitOfWork;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -19,10 +22,12 @@ namespace UmderlakareUmbCms.Business.Services
     
     public class TopicService : ITopicsService
     {
-        private readonly Dialogue.Logic.Services.TopicService _topicService;
+        private Dialogue.Logic.Services.TopicService _topicService;
+        
 
         MemberService _memberService = new MemberService(new Dialogue.Logic.Services.MemberService());
         
+
         public TopicService(Dialogue.Logic.Services.TopicService topicService)
         {
             _topicService = topicService;
@@ -131,12 +136,6 @@ namespace UmderlakareUmbCms.Business.Services
 
         //Fixa till Logiken
         #region Delete Topic
-        //public Dialogue.Logic.Models.Topic GetByIdForDelete(Guid id)
-        //{
-        //    var topic = _topicService.Get(id);
-
-        //    return topic;
-        //}
 
         public void Delete(Guid id)
         {
@@ -162,47 +161,47 @@ namespace UmderlakareUmbCms.Business.Services
         #region Update Topic
         #endregion
 
-        //Skapa Logik
+        //Klar
         #region Create New Topic
 
-        //public void AddTopic([FromBody]JObject json)
-        //{
-        //    CreateTopicViewModel t = JsonConvert.DeserializeObject<CreateTopicViewModel>(json.ToString());
 
-        //    string topicName = t.TopicName;
-        //    int categoryId = t.CategoryId;
-        //    int memberId = t.MemberId;
-
-        //    Dialogue.Logic.Models.Topic dt = new Dialogue.Logic.Models.Topic();
-        //    dt.Name = topicName;
-        //    dt.CategoryId = categoryId;
-        //    dt.MemberId = memberId;
-        //    _topicService.Add(dt);
-
-
-        //}
-
-
-        public void AddTopi(CreateTopicViewModel vm)
+        public void AddTopic(CreateTopicViewModel vm)
         {
-            //string topicContent;
-            Dialogue.Logic.Models.Topic dt = new Dialogue.Logic.Models.Topic();
-         
-            //if (!string.IsNullOrEmpty(vm.TopicContent))
-            //{
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            {
+
+                Dialogue.Logic.Services.CategoryService catServ = new Dialogue.Logic.Services.CategoryService();
+                Dialogue.Logic.Services.MemberService memberServ = new Dialogue.Logic.Services.MemberService();
+                Dialogue.Logic.Services.PermissionService _permissionService = new Dialogue.Logic.Services.PermissionService();
+
+                string topicContent;
+                Dialogue.Logic.Models.Topic dt = new Dialogue.Logic.Models.Topic();
+
                 dt.Name = vm.TopicName;
-                dt.Category = vm.Category;
+                dt.CreateDate = DateTime.UtcNow;
+
                 dt.CategoryId = vm.CategoryId;
-                dt.Member = vm.Member;
                 dt.MemberId = vm.MemberId;
+                topicContent = vm.TopicContent;
 
-                //topicContent = vm.TopicContent;
-                _topicService.Add(dt);
-           // }
-                
+                var category = catServ.Get(dt.CategoryId);
+                var member = memberServ.Get(dt.MemberId);
+                Dialogue.Logic.Models.PermissionSet permissions = _permissionService.GetPermissions(category, member.Groups.FirstOrDefault());
 
+                if (permissions[AppConstants.PermissionCreateTopics].IsTicked && !permissions[AppConstants.PermissionReadOnly].IsTicked && !permissions[AppConstants.PermissionDenyAccess].IsTicked && permissions[AppConstants.PermissionCreatePolls].IsTicked && permissions[AppConstants.PermissionAttachFiles].IsTicked)
+                {
 
+                    _topicService.Add(dt);
+                    unitOfWork.SaveChanges();
+                    _topicService.AddLastPost(dt, topicContent);
+                    unitOfWork.Commit();
+                }
+
+            }
         }
+
+
 
         #endregion
 

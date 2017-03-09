@@ -19,13 +19,10 @@ namespace UmderlakareUmbCms.Business.Entities
         {
             get; set;
         }
-
-        public Dialogue.Logic.Models.Member Member { get; set; }
-
-        public Dialogue.Logic.Models.Category Category { get; set; }
-
-
-       // public string TopicContent { get; set; }
+        public string TopicContent
+        {
+            get; set;
+        }
 
     }
 }
