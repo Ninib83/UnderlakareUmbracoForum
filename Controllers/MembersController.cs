@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dialogue.Logic.Data.Context;
+using Dialogue.Logic.Data.UnitOfWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -86,6 +88,35 @@ namespace UmderlakareUmbCms.Controllers
             }
         }
 
+        #endregion
+
+        #region HttpPost
+
+        [HttpPost]
+        
+        [Route("Login")]
+        public IHttpActionResult Login(string username, string password)
+        {
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            {
+                try
+                {
+
+                    _membersService.Login(username, password);
+                    unitOfWork.Commit();
+
+                    return Ok();
+                }
+                catch (Exception)
+                {
+
+                    unitOfWork.Rollback();
+                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
+                }
+            }
+
+        }
         #endregion
     }
 }

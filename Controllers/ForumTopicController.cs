@@ -6,6 +6,7 @@ using System;
 using System.Net;
 using System.Web.Http;
 using UmderlakareUmbCms.Business.Entities;
+using UmderlakareUmbCms.Business.Entities.ViewModel;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 
 namespace UmderlakareUmbCms.Controllers
@@ -94,22 +95,22 @@ namespace UmderlakareUmbCms.Controllers
             }
         }
 
-        //[HttpGet]
-        //[Route("{categoryId:int}")]
-        //public IHttpActionResult GetTopicByCategoryId(int categoryId, [FromUri] int page = 1, [FromUri]int pageSize = 5)
-        //{
-        //    try
-        //    {
-        //        var topics = _topicsService.GetTopicByCategoryId(page, pageSize, categoryId);
-        //        return Ok(topics);
-        //    }
-        //    catch (Exception e)
-        //    {
+        [HttpGet]
+        [Route("topicByCategoryId/{categoryId:int}")]
+        public IHttpActionResult GetTopicByCategoryId(int categoryId, [FromUri] int page = 1, [FromUri]int pageSize = 5, [FromUri]int amountToTake = 10)
+        {
+            try
+            {
+                var topics = _topicsService.GetTopicByCategoryId(categoryId, page, pageSize, amountToTake);
+                return Ok(topics);
+            }
+            catch (Exception e)
+            {
 
-        //        Console.WriteLine(e);
-        //        return Content(HttpStatusCode.InternalServerError, "Något gick fel");
-        //    }
-        //}
+                Console.WriteLine(e);
+                return Content(HttpStatusCode.InternalServerError, "Något gick fel");
+            }
+        }
 
 
 
@@ -117,7 +118,21 @@ namespace UmderlakareUmbCms.Controllers
 
         #region HttpPut
 
+        [HttpPut]
+        [Route("topic/edit")]
+        public IHttpActionResult EditTopic(EditTopicViewModel evm)
+        {
+            try
+            {
+                _topicsService.EditTopic(evm);
+                return Ok();
+            }
+            catch (Exception)
+            {
 
+                return Content(HttpStatusCode.InternalServerError, "something went wrong");
+            }
+        }
 
 
 
@@ -148,35 +163,27 @@ namespace UmderlakareUmbCms.Controllers
         }
         #endregion
 
-
-
         #region HttpDelete
-
+        // Delete topic ska inte kunna deleta enstakade posts förutom hela topic/topicstarter
         [HttpDelete]
-        [Route("{id:Guid}")]
+        [Route("topic/{id:Guid}")]
         public IHttpActionResult Delete(Guid id)
         {
-            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
-            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
-            {
-                try
+             try
                 {
 
                     _topicsService.Delete(id);
-                    unitOfWork.Commit();
+                    
                     return Ok();
                 }
                 catch (Exception)
                 {
-
-
-
-                    unitOfWork.Rollback();
+                
                     return Content(HttpStatusCode.InternalServerError, "something went wrong");
 
                 }
 
-            }
+           
 
 
         }

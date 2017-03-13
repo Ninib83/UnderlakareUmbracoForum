@@ -562,8 +562,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\Entities\ApiResponse.cs" />
     <Compile Include="Business\Entities\Category.cs" />
-    <Compile Include="Business\Entities\CreatePostViewModel.cs" />
-    <Compile Include="Business\Entities\CreateTopicViewModel.cs" />
+    <Compile Include="Business\Entities\Interfaces\IPostPaging.cs" />
+    <Compile Include="Business\Entities\PostPaging.cs" />
+    <Compile Include="Business\Entities\ViewModel\CreatePostViewModel.cs" />
+    <Compile Include="Business\Entities\ViewModel\CreateTopicViewModel.cs" />
+    <Compile Include="Business\Entities\ViewModel\EditPostViewModel.cs" />
+    <Compile Include="Business\Entities\ViewModel\EditTopicViewModel.cs" />
     <Compile Include="Business\Entities\Interfaces\ICategory.cs" />
     <Compile Include="Business\Entities\Interfaces\ILastPost.cs" />
     <Compile Include="Business\Entities\Interfaces\ILastPostMember.cs" />
@@ -572,7 +576,6 @@
     <Compile Include="Business\Entities\Interfaces\IMember.cs" />
     <Compile Include="Business\Entities\Interfaces\IPaging.cs" />
     <Compile Include="Business\Entities\Interfaces\IPost.cs" />
-    <Compile Include="Business\Entities\Interfaces\IPostPaging.cs" />
     <Compile Include="Business\Entities\Interfaces\ISubCategoy.cs" />
     <Compile Include="Business\Entities\Interfaces\ITopic.cs" />
     <Compile Include="Business\Entities\Interfaces\ITopicPaging.cs" />
@@ -583,7 +586,6 @@
     <Compile Include="Business\Entities\Member.cs" />
     <Compile Include="Business\Entities\Paging.cs" />
     <Compile Include="Business\Entities\Post.cs" />
-    <Compile Include="Business\Entities\PostPaging.cs" />
     <Compile Include="Business\Entities\SubCategory.cs" />
     <Compile Include="Business\Entities\Topic.cs" />
     <Compile Include="Business\Entities\TopicPaging.cs" />

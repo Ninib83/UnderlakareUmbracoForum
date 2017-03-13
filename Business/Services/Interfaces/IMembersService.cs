@@ -9,9 +9,10 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
 {
     public interface IMembersService
     {
-        //IEnumerable<Member> GetAllMembers();
         IMember GetMemberById(int id);
         IMember GetMemberByUsername(string username);
         IMember GetMemberByEmail(string email);
+        bool Login(string username, string password);
+        //virtual RegisterModel CreateRegistrationModel(string memberTypeAlias = null);
     }
 }

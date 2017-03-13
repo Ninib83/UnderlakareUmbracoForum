@@ -17,36 +17,31 @@ namespace UmderlakareUmbCms.Business.Entities
             :base(hasMore, totalMatching)
         {
 
-            List<Post> listsOfPosts = new List<Post>();
-            List<Post> listsOfPostsInTopic = new List<Post>();
+            
+            List<Topic> listOfTopicInCat = new List<Topic>();
 
+           
 
             foreach (var topic in topics)
             {
-                
+                List<Post> listOfPosts = new List<Post>();
+
                 foreach (var post in topic.Posts)
                 {
                         var po = new Post(post.Id, post.MemberId, post.PostContent, post.DateCreated, topic.Id, topic.Member.UserName);
-                        listsOfPosts.Add(po);
+                        listOfPosts.Add(po);
                    
                 }
 
-
-
-                foreach (var pos in listsOfPosts)
-                {
-                    if(pos.TopicId == topic.Id)
-                    {
-                        var postInTopic = new Post(pos.Id, pos.MemberId, pos.PostContent,pos.DateCreated, pos.TopicId, pos.UserName);
-                        listsOfPostsInTopic.Add(postInTopic);
-                    }
-                }
-
-
+                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPosts);
+                listOfTopicInCat.Add(topi);
+               
             }
 
+            //Topics = topics.Select(x => new Topic(x.Id, x.MemberId, x.CategoryId, x.Views, x.Name, x.CreateDate, listOfPosts));
+            Topics = listOfTopicInCat.ToList();
 
-            Topics = topics.Select(x => new Topic(x.Id, x.MemberId, x.CategoryId, x.Views, x.Name, x.CreateDate, listsOfPostsInTopic));
+
         }
         public TopicPaging(bool hasMore, int totalMatching, IEnumerable<ITopic> topics) 
             : base(hasMore, totalMatching)

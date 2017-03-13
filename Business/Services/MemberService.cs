@@ -5,37 +5,27 @@ using System.Web;
 using UmderlakareUmbCms.Business.Entities.Interfaces;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 using UmderlakareUmbCms.Business.Entities;
+using Dialogue.Logic.Application;
 
 namespace UmderlakareUmbCms.Business.Services
 {
     public class MemberService : IMembersService
     {
-        private readonly Dialogue.Logic.Services.MemberService _memberService;
+        private Dialogue.Logic.Services.MemberService _memberService;
 
         public MemberService(Dialogue.Logic.Services.MemberService memberService)
         {
             _memberService = memberService;
         }
 
-        // fixa funktionen(Vet ej om det behövs)
-        #region Get All Members Request
-
-        //public IEnumerable<Category> GetAllMembers()
-        //{
-        //    List<Member> totalMemberList = new List<Member>();
-
-        //    var members = _memberService.GetAll();
-
-        //    foreach (var m in members)
-        //    {
-        //        var member = new Member(m.Id, m.Name, null, null, null, null, null, null, null, null);
-        //        totalMemberList.Add(member);
-        //    }
-
-        //    return totalMemberList;
-        //}
-
-        #endregion
+        public bool Login(string username, string password)
+        {
+            
+            var member = _memberService.Login(username, password);
+            return AppHelpers.UmbMemberHelper().Login(username, password);
+            
+            
+        }
 
         //Klar
         #region Get Member By Email Request

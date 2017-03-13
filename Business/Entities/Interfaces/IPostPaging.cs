@@ -7,6 +7,5 @@ namespace UmderlakareUmbCms.Business.Entities.Interfaces
 {
     public interface IPostPaging :IPaging
     {
-        IEnumerable<IPost> Posts { get; }
     }
 }

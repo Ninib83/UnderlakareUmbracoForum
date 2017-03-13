@@ -1,32 +1,27 @@
 ﻿using Dialogue.Logic.Constants;
 using Dialogue.Logic.Data.Context;
 using Dialogue.Logic.Data.UnitOfWork;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Http;
-using umbraco;
-using Umbraco.Core;
-using Umbraco.Core.Models;
-using Umbraco.Web;
 using UmderlakareUmbCms.Business.Entities;
+
 using UmderlakareUmbCms.Business.Entities.Interfaces;
+using UmderlakareUmbCms.Business.Entities.ViewModel;
 using UmderlakareUmbCms.Business.Helpers;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 
 namespace UmderlakareUmbCms.Business.Services
 {
-    
+
     public class TopicService : ITopicsService
     {
         private Dialogue.Logic.Services.TopicService _topicService;
-        
-
         MemberService _memberService = new MemberService(new Dialogue.Logic.Services.MemberService());
-        
+        Dialogue.Logic.Services.MemberService _memberServ = new Dialogue.Logic.Services.MemberService();
+        Dialogue.Logic.Services.CategoryService _catServ = new Dialogue.Logic.Services.CategoryService();
+        Dialogue.Logic.Services.PermissionService _permissionService = new Dialogue.Logic.Services.PermissionService();
+        Dialogue.Logic.Services.PostService _postService = new Dialogue.Logic.Services.PostService();
 
         public TopicService(Dialogue.Logic.Services.TopicService topicService)
         {
@@ -97,7 +92,7 @@ namespace UmderlakareUmbCms.Business.Services
         #endregion
 
         //Klar
-        #region Get All User Topics By MemberId Request
+        #region Get All Topics By MemberId Request
 
         public IList<Topic> GetAllTopicsByUser(int memberId)
         {
@@ -122,43 +117,129 @@ namespace UmderlakareUmbCms.Business.Services
 
         #endregion
 
-        //Fixa logik
+        //Klar
         #region Get Topic By CategoryId
-        public ITopicPaging GetTopicByCategoryId(int categoryId, int page, int pageSize)
+        public ITopicPaging GetTopicByCategoryId(int categoryId,int page, int pageSize, int amountToTake)
         {
+
+
             var topics = _topicService.GetPagedTopicsByCategory(page, pageSize, Int32.MaxValue, categoryId);
             var hasMore = PagingHelper.HasMore(page, pageSize, topics.TotalCount);
             var results = new TopicPaging(hasMore, topics.TotalCount, topics);
 
             return results;
+
+
         }
         #endregion
 
-        //Fixa till Logiken
+        //Klar
         #region Delete Topic
 
         public void Delete(Guid id)
         {
+            bool isTopicStarter;
 
-            var topics = _topicService.GetAll();
-            foreach (var topic in topics)
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
             {
-                if (topic != null && topic.Id == id)
-                {
 
-                    _topicService.Delete(topic);
+                var topic = _topicService.Get(id);
+                var post = topic.Posts.FirstOrDefault(p=>p.IsTopicStarter==true);
+                isTopicStarter = post.IsTopicStarter;
+
+                var category = _catServ.Get(topic.CategoryId);
+                var member = _memberServ.Get(topic.MemberId);
+
+                var permission = _permissionService.GetPermissions(category, member.Groups.FirstOrDefault());
+
+                if (topic.MemberId == member.Id || permission[AppConstants.PermissionModerate].IsTicked)
+                {
+                    if (isTopicStarter)
+                    {
+                        var deleteStarterPost = _postService.Delete(post);
+                        unitOfWork.SaveChanges();
+
+                        if (deleteStarterPost)
+                        {
+                            _topicService.Delete(topic);
+                        }
+
+                        try
+                        {
+                            unitOfWork.Commit();
+                        }
+                        catch (Exception)
+                        {
+                            unitOfWork.Rollback();
+                            throw new Exception(Lang("Errors.GenericMessage"));
+                        }
+                    }
 
                 }
-
             }
-            
+        }
 
+
+        
+
+        private string Lang(string v)
+        {
+            return "Topic not deleted!";
         }
 
         #endregion
 
-        //Skapa Logik
-        #region Update Topic
+        //Klar
+        #region Edit Topic
+
+        public void EditTopic(EditTopicViewModel evm)
+        {
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            {
+                var topic = _topicService.Get(evm.Id);
+
+                //var post = _postService.Get(evm.LastPostId);
+                var post = topic.Posts.FirstOrDefault();
+                var category = _catServ.Get(topic.CategoryId);
+                var member = _memberServ.Get(post.MemberId);
+                var permission = _permissionService.GetPermissions(category, member.Groups.FirstOrDefault());
+
+                if (topic.MemberId == member.Id || permission[AppConstants.PermissionModerate].IsTicked)
+                {
+                    topic.Name = evm.Name;
+                    //topic.Slug = evm.Name;
+                    if (post.Id == evm.LastPostId && post.IsTopicStarter)
+                    {
+                        post.PostContent = evm.PostContent;
+                        post.DateEdited = DateTime.UtcNow;
+                    }
+
+                    if (post.IsTopicStarter)
+                    {
+                        if (topic.CategoryId != evm.CategoryId)
+                        {
+                            var cat = _catServ.Get(evm.CategoryId);
+                            topic.Category = cat;
+                        }
+                    }
+
+                    try
+                    {
+                        unitOfWork.Commit();
+
+                    }
+                    catch (Exception)
+                    {
+                        unitOfWork.Rollback();
+
+                    }
+
+                }
+            }
+
+        }
         #endregion
 
         //Klar
@@ -189,7 +270,11 @@ namespace UmderlakareUmbCms.Business.Services
                 var member = memberServ.Get(dt.MemberId);
                 Dialogue.Logic.Models.PermissionSet permissions = _permissionService.GetPermissions(category, member.Groups.FirstOrDefault());
 
-                if (permissions[AppConstants.PermissionCreateTopics].IsTicked && !permissions[AppConstants.PermissionReadOnly].IsTicked && !permissions[AppConstants.PermissionDenyAccess].IsTicked && permissions[AppConstants.PermissionCreatePolls].IsTicked && permissions[AppConstants.PermissionAttachFiles].IsTicked)
+                if (permissions[AppConstants.PermissionCreateTopics].IsTicked &&
+                    !permissions[AppConstants.PermissionReadOnly].IsTicked && 
+                    !permissions[AppConstants.PermissionDenyAccess].IsTicked && 
+                    permissions[AppConstants.PermissionCreatePolls].IsTicked && 
+                    permissions[AppConstants.PermissionAttachFiles].IsTicked)
                 {
 
                     _topicService.Add(dt);

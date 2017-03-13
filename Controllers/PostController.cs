@@ -9,6 +9,7 @@ using System.Net;
 using System.Web;
 using System.Web.Http;
 using UmderlakareUmbCms.Business.Entities;
+using UmderlakareUmbCms.Business.Entities.ViewModel;
 using UmderlakareUmbCms.Business.Services;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 
@@ -26,21 +27,21 @@ namespace UnderlakareCmsDialogue.Controllers
 
         #region HttpGet
 
-        //[HttpGet]
-        //[Route("")]
-        //public IHttpActionResult GetPostsByTopicId([FromUri] int page = 1, [FromUri]int pageSize = 10)
-        //{
-        //    try
-        //    {
-        //        var posts = _postsService.GetPostsByTopicId(page, pageSize);
-        //        return Ok(posts);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine(e);
-        //        return Content(HttpStatusCode.InternalServerError, "Något gick fel");
-        //    }
-        //}
+        [HttpGet]
+        [Route("postByTopicId/{topicId:Guid}")]
+        public IHttpActionResult GetPostsByTopicId(Guid topicId, [FromUri] int pageIndex = 1, [FromUri]int pageSize = 10, [FromUri]int amountToTake = 10, [FromUri] PostOrderBy order = 0)
+        {
+            try
+            {
+                var posts = _postsService.GetPostsByTopicId(topicId, pageIndex, pageSize, amountToTake, order);
+                return Ok(posts);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return Content(HttpStatusCode.InternalServerError, "Något gick fel");
+            }
+        }
 
 
         [HttpGet]
@@ -78,7 +79,7 @@ namespace UnderlakareCmsDialogue.Controllers
 
 
         [HttpGet]
-        [Route("{memberId:int}")]
+        [Route("getPostByMembetId/{memberId:int}")]
         public IHttpActionResult GetPostByMemberId(int memberId)
         {
             try
@@ -131,62 +132,43 @@ namespace UnderlakareCmsDialogue.Controllers
 
 
         [HttpPut]
-        [Route("addpost")]
-        public IHttpActionResult Edit(CreatePostViewModel vm)
+        [Route("post/edit")]
+        public IHttpActionResult EditPost(EditPostViewModel evm)
         {
-            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
-            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            try
             {
-                try
-                {
-
-                    _postsService.AddPost(vm);
-                    unitOfWork.Commit();
-
-                    return Ok();
-                }
-                catch (Exception)
-                {
-
-                    unitOfWork.Rollback();
-                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
-                }
+                _postsService.EditPost(evm);
+                return Ok();
             }
+            catch (Exception)
+            {
 
+                return Content(HttpStatusCode.InternalServerError, "something went wrong");
+            }
         }
 
         #endregion
 
         #region HttpDelete
 
+        //Delete post and topic
         [HttpDelete]
-        [Route("{id:Guid}")]
-        public IHttpActionResult Delete(Guid id)
+        [Route("post/{id:Guid}")]
+        public IHttpActionResult DeletePostAndTopic(Guid id)
         {
-            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
-            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            try
             {
-                try
-                {
+                _postsService.Delete(id);
+                return Ok();
+            }
+            catch (Exception)
+            {
 
-                    _postsService.Delete(id);
-                    unitOfWork.Commit();
-                    return Ok();
-                }
-                catch (Exception)
-                {
-
-
-
-                    unitOfWork.Rollback();
-                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
-
-                }
+                return Content(HttpStatusCode.InternalServerError, "something went wrong");
 
             }
-
-
         }
+
 
         #endregion
 

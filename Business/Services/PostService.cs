@@ -8,6 +8,10 @@ using UmderlakareUmbCms.Business.Entities.Interfaces;
 using UmderlakareUmbCms.Business.Helpers;
 using Post = UmderlakareUmbCms.Business.Entities.Post;
 using System.Net.Http;
+using Dialogue.Logic.Data.UnitOfWork;
+using Dialogue.Logic.Data.Context;
+using Dialogue.Logic.Constants;
+using UmderlakareUmbCms.Business.Entities.ViewModel;
 
 namespace UmderlakareUmbCms.Business.Services
 {
@@ -16,6 +20,13 @@ namespace UmderlakareUmbCms.Business.Services
         private  Dialogue.Logic.Services.PostService _postService;
         TopicService _topicService = new TopicService(new Dialogue.Logic.Services.TopicService());
         MemberService _memberService = new MemberService(new Dialogue.Logic.Services.MemberService());
+
+
+        Dialogue.Logic.Services.MemberService _memberServ = new Dialogue.Logic.Services.MemberService();
+        Dialogue.Logic.Services.CategoryService _catServ = new Dialogue.Logic.Services.CategoryService();
+        Dialogue.Logic.Services.PermissionService _permissionService = new Dialogue.Logic.Services.PermissionService();
+        Dialogue.Logic.Services.TopicService _topicServ = new Dialogue.Logic.Services.TopicService();
+
 
         public PostService(Dialogue.Logic.Services.PostService postService)
         {
@@ -83,36 +94,72 @@ namespace UmderlakareUmbCms.Business.Services
 
         #endregion
 
-        // Skapa logik
+        //Klar
         #region Get Paged Posts By TopicId
-        
-        //public IEnumerable<Post> GetPostsByTopicId(Guid TopicId)
-        //{
-        //    var posts = _postService.GetPagedPostsByTopic(TopicId);
-        //}
+
+        public IPostPaging GetPostsByTopicId(Guid topicId, int pageIndex, int pageSize, int amountToTake, PostOrderBy order)
+        {
+            var posts = _postService.GetPagedPostsByTopic(pageIndex, pageSize, amountToTake, topicId, order);
+            var hasMore = PagingHelper.HasMore(pageIndex, amountToTake, pageSize);
+            var results = new PostPaging(hasMore, posts.TotalCount, posts);
+
+            return results;
+        }
 
         #endregion
 
         //Klar
         #region Delete
-
-
+        // Delete post ska inte kunna deleta topicstarter
         public void Delete(Guid id)
         {
 
-            var posts = _postService.GetAll();
-            foreach (var post in posts)
-            {
-                if (posts != null && post.Id == id)
-                {
+            bool isTopicStarter;
+            Dialogue.Logic.Models.Topic topic;
 
-                    _postService.Delete(post);
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            {
+                var post = _postService.Get(id);
+                
+                isTopicStarter = post.IsTopicStarter;
+
+                topic = post.Topic;
+                var category = _catServ.Get(topic.CategoryId);
+                var member = _memberServ.Get(post.MemberId);
+
+                var permission = _permissionService.GetPermissions(category, member.Groups.FirstOrDefault());
+
+                if (post.MemberId == member.Id || permission[AppConstants.PermissionModerate].IsTicked)
+                {
+                    var postUser = post.Member;
+
+                    if(isTopicStarter == false)
+                    {
+                        var deletePost = _postService.Delete(post);
+                        unitOfWork.SaveChanges();
+
+                        try
+                        {
+                            unitOfWork.Commit();
+                        }
+                        catch (Exception)
+                        {
+                            unitOfWork.Rollback();
+                            throw new Exception(Lang("Errors.GenericMessage"));
+                        }
+                    }
+                   
+                 
 
                 }
-
             }
 
+        }
 
+        private string Lang(string v)
+        {
+            return "Not Deleted";
         }
 
 
@@ -120,35 +167,47 @@ namespace UmderlakareUmbCms.Business.Services
 
         #endregion
 
-        //Skapa Logik
+        //Klar
         #region update Post
-
-        public void Edit(Guid id, CreatePostViewModel vm)
+        public void EditPost(EditPostViewModel evm)
         {
-            var posts = _postService.Get(id);
-            var member = _memberService.GetMemberById(posts.MemberId);
-            var topic = _topicService.GetTopicById(posts.Topic.Id);
-            var post = new Post(posts.Id, posts.MemberId, posts.PostContent, posts.DateCreated, posts.Topic.Id, member.UserName);
+            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
+            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+            {
+                var post = _postService.Get(evm.Id);
 
+                var topic = post.Topic;
+                var category = _catServ.Get(topic.CategoryId);
+                var member = _memberServ.Get(post.MemberId);
+                var permission = _permissionService.GetPermissions(category, member.Groups.FirstOrDefault());
 
-            Dialogue.Logic.Services.TopicService topServ = new Dialogue.Logic.Services.TopicService();
-            Dialogue.Logic.Services.CategoryService catServ = new Dialogue.Logic.Services.CategoryService();
-            Dialogue.Logic.Services.MemberService memberServ = new Dialogue.Logic.Services.MemberService();
-            Dialogue.Logic.Services.PermissionService _permissionService = new Dialogue.Logic.Services.PermissionService();
+                if (post.MemberId == member.Id || permission[AppConstants.PermissionModerate].IsTicked)
+                {
+                    post.PostContent = evm.PostContent;
+                    post.DateEdited = DateTime.UtcNow;
 
-            var top = topServ.Get(new Guid(vm.TopicId));
+                    if (post.IsTopicStarter)
+                    {
+                        if (topic.CategoryId != evm.CategoryId)
+                        {
+                            var cat = _catServ.Get(evm.CategoryId);
+                            topic.Category = cat;
+                        }
+                    }
 
-            var category = catServ.Get(topic.CategoryId);
-            Dialogue.Logic.Models.Member user = new Dialogue.Logic.Models.Member();
-            top.MemberId = vm.MemberId;
-            var membr = memberServ.Get(topic.MemberId);
+                    try
+                    {
+                        unitOfWork.Commit();
 
-            Dialogue.Logic.Models.PermissionSet permissions = _permissionService.GetPermissions(category, membr.Groups.FirstOrDefault());
+                    }
+                    catch (Exception)
+                    {
+                        unitOfWork.Rollback();
 
-            _postService.AddNewPost(vm.PostContent, top, membr, out permissions);
+                    }
 
-
-
+                }
+            }
         }
 
 
@@ -167,17 +226,17 @@ namespace UmderlakareUmbCms.Business.Services
             Dialogue.Logic.Services.PermissionService _permissionService = new Dialogue.Logic.Services.PermissionService();
 
             var topic = topServ.Get(new Guid(vm.TopicId));
-
             var category = catServ.Get(topic.CategoryId);
-            //Dialogue.Logic.Models.Member user = new Dialogue.Logic.Models.Member();
             topic.MemberId = vm.MemberId;
             var member = memberServ.Get(topic.MemberId);
 
-            Dialogue.Logic.Models.PermissionSet permissions = _permissionService.GetPermissions(category, member.Groups.FirstOrDefault());
+            PermissionSet permissions = _permissionService.GetPermissions(category, member.Groups.FirstOrDefault());
 
             _postService.AddNewPost(vm.PostContent, topic, member, out permissions);
 
         }
+
+
 
         #endregion
 
