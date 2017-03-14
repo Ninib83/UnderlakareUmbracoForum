@@ -589,6 +589,8 @@
     <Compile Include="Business\Entities\SubCategory.cs" />
     <Compile Include="Business\Entities\Topic.cs" />
     <Compile Include="Business\Entities\TopicPaging.cs" />
+    <Compile Include="Business\Entities\ViewModel\LoginMemberViewModel.cs" />
+    <Compile Include="Business\Entities\ViewModel\RegisterMemberViewModel.cs" />
     <Compile Include="Business\Helpers\PagingHelper.cs" />
     <Compile Include="Business\Registries\DependencyRegistry.cs" />
     <Compile Include="Business\Services\CategoryService.cs" />

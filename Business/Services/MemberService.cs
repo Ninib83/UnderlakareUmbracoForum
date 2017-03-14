@@ -6,26 +6,51 @@ using UmderlakareUmbCms.Business.Entities.Interfaces;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 using UmderlakareUmbCms.Business.Entities;
 using Dialogue.Logic.Application;
+using UmderlakareUmbCms.Business.Entities.ViewModel;
+using Umbraco.Web.Security;
+using System.Web.Security;
+using Umbraco.Web;
+using Umbraco.Core;
 
 namespace UmderlakareUmbCms.Business.Services
 {
     public class MemberService : IMembersService
     {
         private Dialogue.Logic.Services.MemberService _memberService;
+        private MembershipHelper membershipHelper = new MembershipHelper(UmbracoContext.Current);
 
         public MemberService(Dialogue.Logic.Services.MemberService memberService)
         {
             _memberService = memberService;
         }
 
-        public bool Login(string username, string password)
+        #region Login
+        public void Login(LoginMemberViewModel vm)
         {
-            
-            var member = _memberService.Login(username, password);
-            return AppHelpers.UmbMemberHelper().Login(username, password);
-            
-            
+
+            membershipHelper.Login(vm.UserName, vm.Password);
+
+
         }
+        
+        #endregion
+
+        //Klar
+        #region Register
+
+        public void Register(RegisterMemberViewModel vm)
+        {
+            var loginType = Dialogue.Logic.Models.LoginType.Standard;
+            vm.LoginType = loginType;
+
+            Umbraco.Core.Models.IMember _newMember = ApplicationContext.Current.Services.MemberService.CreateMember(vm.UserName, vm.Email, vm.UserName, "DialogueMember");
+            ApplicationContext.Current.Services.MemberService.Save(_newMember, false);
+            ApplicationContext.Current.Services.MemberService.SavePassword(_newMember, vm.Password);
+            ApplicationContext.Current.Services.MemberService.AssignRole(_newMember.Id, "Dialogue Standard");
+
+        }
+
+        #endregion
 
         //Klar
         #region Get Member By Email Request
@@ -74,6 +99,8 @@ namespace UmderlakareUmbCms.Business.Services
                               member.LastLoginDate, 
                               member.PostCount);
         }
+
+
         #endregion
     }
 }

@@ -1,11 +1,13 @@
 ﻿using Dialogue.Logic.Data.Context;
 using Dialogue.Logic.Data.UnitOfWork;
+using Dialogue.Logic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Http;
+using UmderlakareUmbCms.Business.Entities.ViewModel;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 
 namespace UmderlakareUmbCms.Controllers
@@ -56,7 +58,7 @@ namespace UmderlakareUmbCms.Controllers
             }
         }
         [HttpGet]
-        [Route("")]
+        [Route("email")]
         public IHttpActionResult GetMemberByEmail(string email)
         {
             try
@@ -93,30 +95,45 @@ namespace UmderlakareUmbCms.Controllers
         #region HttpPost
 
         [HttpPost]
-        
-        [Route("Login")]
-        public IHttpActionResult Login(string username, string password)
+        //[Authorize]
+        [Route("member/login")]
+        public IHttpActionResult Login(LoginMemberViewModel vm)
         {
-            var UnitOfWorkManager = new UnitOfWorkManager(ContextPerRequest.Db);
-            using (var unitOfWork = UnitOfWorkManager.NewUnitOfWork())
+
+
+            try
             {
-                try
-                {
 
-                    _membersService.Login(username, password);
-                    unitOfWork.Commit();
+                _membersService.Login(vm);
 
-                    return Ok();
-                }
-                catch (Exception)
-                {
 
-                    unitOfWork.Rollback();
-                    return Content(HttpStatusCode.InternalServerError, "something went wrong");
-                }
+                return Ok();
             }
+            catch (Exception)
+            {
+
+
+                return Content(HttpStatusCode.InternalServerError, "something went wrong");
+            }
+
 
         }
         #endregion
+
+        [HttpPost]
+        [Route("member/register")]
+        public IHttpActionResult RegisterMember(RegisterMemberViewModel vm)
+        {
+            try
+            {
+                _membersService.Register(vm);
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                return Content(HttpStatusCode.InternalServerError, "Not found!");
+            }
+        }
     }
 }
