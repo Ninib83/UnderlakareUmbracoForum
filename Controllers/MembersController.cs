@@ -95,12 +95,9 @@ namespace UmderlakareUmbCms.Controllers
         #region HttpPost
 
         [HttpPost]
-        //[Authorize]
         [Route("member/login")]
-        public IHttpActionResult Login(LoginMemberViewModel vm)
+        public IHttpActionResult LoginMember(LoginMemberViewModel vm)
         {
-
-
             try
             {
 
@@ -113,12 +110,35 @@ namespace UmderlakareUmbCms.Controllers
             {
 
 
-                return Content(HttpStatusCode.InternalServerError, "something went wrong");
+                return Content(HttpStatusCode.InternalServerError, "something went wrong when login");
             }
 
 
         }
-        #endregion
+
+        [HttpPost]
+        [Route("member/logout")]
+        public IHttpActionResult LogOff()
+        {
+
+
+            try
+            {
+
+                _membersService.LogOff();
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+
+                return Content(HttpStatusCode.InternalServerError, "something went wrong when logout");
+            }
+
+
+        }
+
 
         [HttpPost]
         [Route("member/register")]
@@ -132,8 +152,13 @@ namespace UmderlakareUmbCms.Controllers
             catch (Exception)
             {
 
-                return Content(HttpStatusCode.InternalServerError, "Not found!");
+                return Content(HttpStatusCode.InternalServerError, "something went wrong");
             }
         }
+
+
+        #endregion
+
+
     }
 }

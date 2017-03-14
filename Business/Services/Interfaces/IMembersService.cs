@@ -17,5 +17,6 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
 
         void Register(RegisterMemberViewModel vm);
         void Login(LoginMemberViewModel vm);
+        void LogOff();
     }
 }

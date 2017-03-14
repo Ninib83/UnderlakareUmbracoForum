@@ -7,6 +7,8 @@ using UmderlakareUmbCms.Business.Entities.Interfaces;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 using UmderlakareUmbCms.Business.Entities;
 using Umbraco.Core.Models;
+using Umbraco.Web.Security;
+using Umbraco.Web;
 
 namespace UmderlakareUmbCms.Business.Services
 {

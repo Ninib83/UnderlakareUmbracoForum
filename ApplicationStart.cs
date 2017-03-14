@@ -1,45 +1,26 @@
 ﻿using System.Web.Http;
 using System.Web.Mvc;
-using Autofac.Integration.Mvc;
-using Autofac.Integration.WebApi;
 using Umbraco.Core;
 using UmderlakareUmbCms.App_Start;
-using UmderlakareUmbCms.Business.Registries;
+
 using UmderlakareUmbCms.Business.Helpers;
 using Umbraco.Web;
+using System.Web.Http.Dispatcher;
 
 namespace UmderlakareUmbCms
 {
     
-    public class ApplicationStart : IApplicationEventHandler /*UmbracoApplication*/
+    public class ApplicationStart : ApplicationEventHandler 
     {
-        public void OnApplicationInitialized(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-           
-
-        }
-
-
-
-        public void OnApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-        {
-            
-
-        }
-
-        public void OnApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
-        {
-
             AreaRegistration.RegisterAllAreas();
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
             WebApiConfig.Register(GlobalConfiguration.Configuration);
 
-            var container = applicationContext.RegisterDependencies();
-
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-
+            GlobalConfiguration.Configuration.Services.
+               Replace(typeof(IHttpControllerActivator), new UmbracoWebApiHttpControllerActivator());
         }
-
 
     }
 }

@@ -22,7 +22,8 @@ namespace UmderlakareUmbCms.Business.Registries
 
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-     
+                
+            
 
             builder.RegisterType<Services.TopicService>()
                 .As<ITopicsService>()
@@ -45,6 +46,7 @@ namespace UmderlakareUmbCms.Business.Registries
 
             builder.RegisterInstance(applicationContext.Services.ContentService).As<IContentService>();
             builder.RegisterInstance(applicationContext.Services.UserService).As<IUserService>();
+            
             
 
             var container = builder.Build();

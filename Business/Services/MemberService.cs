@@ -24,17 +24,6 @@ namespace UmderlakareUmbCms.Business.Services
             _memberService = memberService;
         }
 
-        #region Login
-        public void Login(LoginMemberViewModel vm)
-        {
-
-            membershipHelper.Login(vm.UserName, vm.Password);
-
-
-        }
-        
-        #endregion
-
         //Klar
         #region Register
 
@@ -52,6 +41,33 @@ namespace UmderlakareUmbCms.Business.Services
 
         #endregion
 
+
+        #region Login
+        public void Login(LoginMemberViewModel vm)
+        {
+
+            if (membershipHelper.Login(vm.UserName, vm.Password))
+            {
+                membershipHelper.GetCurrentLoginStatus();
+                bool status = membershipHelper.IsLoggedIn();
+            }
+        }
+
+        #endregion
+
+        #region LogOut
+        public void LogOff()
+        {
+
+            if(membershipHelper.IsLoggedIn())
+            {
+                membershipHelper.Logout();
+            }
+
+        }
+        #endregion
+
+       
         //Klar
         #region Get Member By Email Request
         public IMember GetMemberByEmail(string email)

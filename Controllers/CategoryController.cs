@@ -16,13 +16,13 @@ namespace UmderlakareUmbCms.Controllers
         // Fixa Dependency injection
 
 
-        //private  ICategorysService _categorysService;
-        CategoryService _categorysService = new CategoryService(new Dialogue.Logic.Services.CategoryService());
+        private  ICategorysService _categorysService;
+        //CategoryService _categorysService = new CategoryService(new Dialogue.Logic.Services.CategoryService());
 
         
-        public CategoryController()//ICategorysService categorysService) 
+        public CategoryController(ICategorysService categorysService) 
         {
-           // _categorysService = categorysService;
+            _categorysService = categorysService;
         }
 
         #region HttpGet
