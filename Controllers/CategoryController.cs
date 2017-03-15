@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Http;
-using UmderlakareUmbCms.Business.Services;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 
 namespace UmderlakareUmbCms.Controllers
@@ -13,11 +9,10 @@ namespace UmderlakareUmbCms.Controllers
     public class CategoryController : ApiController
     {
 
-        // Fixa Dependency injection
 
 
         private  ICategorysService _categorysService;
-        //CategoryService _categorysService = new CategoryService(new Dialogue.Logic.Services.CategoryService());
+       
 
         
         public CategoryController(ICategorysService categorysService) 

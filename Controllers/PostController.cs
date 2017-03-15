@@ -1,16 +1,10 @@
-﻿using Dialogue.Logic.Application.Akismet;
-using Dialogue.Logic.Data.Context;
+﻿using Dialogue.Logic.Data.Context;
 using Dialogue.Logic.Data.UnitOfWork;
 using Dialogue.Logic.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Http;
-using UmderlakareUmbCms.Business.Entities;
 using UmderlakareUmbCms.Business.Entities.ViewModel;
-using UmderlakareUmbCms.Business.Services;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 
 namespace UnderlakareCmsDialogue.Controllers

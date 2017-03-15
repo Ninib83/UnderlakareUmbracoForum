@@ -1,11 +1,6 @@
-﻿using Dialogue.Logic.Data.Context;
-using Dialogue.Logic.Data.UnitOfWork;
-using Dialogue.Logic.Models;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Net;
 using System.Web.Http;
-using UmderlakareUmbCms.Business.Entities;
 using UmderlakareUmbCms.Business.Entities.ViewModel;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 

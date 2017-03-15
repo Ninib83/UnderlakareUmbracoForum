@@ -1,11 +1,5 @@
-﻿using Dialogue.Logic.Data.Context;
-using Dialogue.Logic.Data.UnitOfWork;
-using Dialogue.Logic.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Net;
-using System.Web;
 using System.Web.Http;
 using UmderlakareUmbCms.Business.Entities.ViewModel;
 using UmderlakareUmbCms.Business.Services.Interfaces;
@@ -24,21 +18,6 @@ namespace UmderlakareUmbCms.Controllers
         }
 
         #region HttpGet
-
-        //public IHttpActionResult GetAll()
-        //{
-        //    try
-        //    {
-        //        var member = _membersService.GetAllMembers();
-        //        return Ok(member);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        Console.WriteLine(ex);
-        //        return Content(HttpStatusCode.InternalServerError, "Något har hänt!");
-        //    }
-        //}
 
 
         [HttpGet]
