@@ -15,6 +15,6 @@ namespace UmderlakareUmbCms.Business.Entities.Interfaces
         string Name { get;}
         DateTime CreateDate { get; }
         List<Post> Posts { get; }
-
+        string UserName { get; }
     }
 }

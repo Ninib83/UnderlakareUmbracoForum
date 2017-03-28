@@ -66,8 +66,8 @@ namespace UmderlakareUmbCms.Business.Services
                             }
 
 
-                            
-                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic);
+                            var memberInTopic = _memberService.GetMemberById(topic.MemberId);
+                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
                             listOfTopicsInCategory.Add(topicInCat);    
 
                         }
@@ -149,7 +149,8 @@ namespace UmderlakareUmbCms.Business.Services
                                 listOfPostsInTopic.Add(postInTopi);
                             }
 
-                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic);
+                            var memberInTopic = _memberService.GetMemberById(topic.MemberId);
+                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
                             listOfTopicsInCategory.Add(topicInCat);
 
                         }
@@ -219,8 +220,8 @@ namespace UmderlakareUmbCms.Business.Services
                         }
 
 
-
-                        var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic);
+                        var memberInTopic = _memberService.GetMemberById(topic.MemberId);
+                        var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
                         listOfTopicsInCategory.Add(topicInCat);
 
                     }
@@ -264,61 +265,87 @@ namespace UmderlakareUmbCms.Business.Services
         // Klart
         #region Get Sub Category By SubCategoryId Requset
 
-        public ISubCategoy GetSubCategoryById(int id)
+        public IEnumerable<SubCategoriesId> GetSubCategoryById(int id)
         {
+            List<Topic> listOfTopicsInCategory = new List<Topic>();
             var subCategories = _categoryService.Get(id);
+            var alltopics = _topicService.GetAll().ToList();
 
-            List<SubCategory> listOfSubCategories = new List<SubCategory>();
+            foreach (var topic in alltopics)
+            {
+                List<Post> listOfPostsInTopic = new List<Post>();
 
+                foreach (var post in topic.Posts)
+                {
+                    var member = _memberService.GetMemberById(post.MemberId);
+                    var postInTopic = new Post(post.Id, post.MemberId, post.PostContent, post.DateCreated, topic.Id, member.UserName);
+                    listOfPostsInTopic.Add(postInTopic);
+                }
+                var memberInTopic = _memberService.GetMemberById(topic.MemberId);
+                var topicInSubCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
+                listOfTopicsInCategory.Add(topicInSubCat);
+            }
 
-
-                    var allTopics = _topicService.GetAll().ToList();
-                    List<Topic> listOfTopicsInCategory = new List<Topic>();
-                    List<Post> listOfPostInSubCategory = new List<Post>();
-
-                    foreach (var topic in allTopics)
-                    {
-                        List<Post> listOfPostsInTopic = new List<Post>();
-
-
-
-                            foreach (var post in topic.Posts)
-                            {
-                                var postInTopi = new Post(post.Id, post.MemberId, post.PostContent, post.DateCreated, topic.Id, topic.Name);
-                                listOfPostsInTopic.Add(postInTopi);
-                            }
-
-                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic);
-                            listOfTopicsInCategory.Add(topicInCat);
-
-                        
-                    }
-
-                    LastPost latestPost = null;
-                    LastTopic latestTopic = null;
-                    foreach (var t in listOfTopicsInCategory)
-                    {
-                        if (t.CreateDate <= DateTime.Now)
-                        {
-                            latestTopic = new LastTopic(t.Id, t.Name, t.CreateDate);
-                        }
-
-                        foreach (var post in t.Posts)
-                        {
-                            if (post.DateCreated <= DateTime.Now)
-                            {
-                                var member = _memberService.GetMemberById(post.MemberId);
-                                latestPost = new LastPost(post.Id, post.DateCreated, member.UserName);
-                            }
-
-                            var postInSubCategory = new Post(post.Id, post.MemberId, post.PostContent, post.DateCreated, t.Id, t.Name);
-                            listOfPostInSubCategory.Add(postInSubCategory);
-                        }
-                    }
-
-
-                    return new SubCategory(subCategories.Id, subCategories.Name, listOfTopicsInCategory.Count, listOfPostInSubCategory.Count, latestTopic, latestPost);
+            yield return new SubCategoriesId(subCategories.Id, subCategories.Name, listOfTopicsInCategory);
         }
+
+
+
+        //public SubCategoy GetSubCategoryById(int id)
+        //{
+        //    var subCategories = _categoryService.Get(id);
+
+        //    List<SubCategory> listOfSubCategories = new List<SubCategory>();
+
+
+
+        //            var allTopics = _topicService.GetAll().ToList();
+        //            List<Topic> listOfTopicsInCategory = new List<Topic>();
+        //            List<Post> listOfPostInSubCategory = new List<Post>();
+
+        //            foreach (var topic in allTopics)
+        //            {
+        //                List<Post> listOfPostsInTopic = new List<Post>();
+
+
+
+        //                    foreach (var post in topic.Posts)
+        //                    {
+        //                        var postInTopi = new Post(post.Id, post.MemberId, post.PostContent, post.DateCreated, topic.Id, topic.Name);
+        //                        listOfPostsInTopic.Add(postInTopi);
+        //                    }
+
+        //                    var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic);
+        //                    listOfTopicsInCategory.Add(topicInCat);
+
+
+        //            }
+
+        //            LastPost latestPost = null;
+        //            LastTopic latestTopic = null;
+        //            foreach (var t in listOfTopicsInCategory)
+        //            {
+        //                if (t.CreateDate <= DateTime.Now)
+        //                {
+        //                    latestTopic = new LastTopic(t.Id, t.Name, t.CreateDate);
+        //                }
+
+        //                foreach (var post in t.Posts)
+        //                {
+        //                    if (post.DateCreated <= DateTime.Now)
+        //                    {
+        //                        var member = _memberService.GetMemberById(post.MemberId);
+        //                        latestPost = new LastPost(post.Id, post.DateCreated, member.UserName);
+        //                    }
+
+        //                    var postInSubCategory = new Post(post.Id, post.MemberId, post.PostContent, post.DateCreated, t.Id, t.Name);
+        //                    listOfPostInSubCategory.Add(postInSubCategory);
+        //                }
+        //            }
+
+
+        //            return new SubCategory(subCategories.Id, subCategories.Name, listOfTopicsInCategory.Count, listOfPostInSubCategory.Count, latestTopic, latestPost);
+        //}
 
 
         #endregion

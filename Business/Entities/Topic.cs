@@ -8,7 +8,7 @@ namespace UmderlakareUmbCms.Business.Entities
 {
     public class Topic : ITopic
     {
-        public Topic(Guid id, int memberId, int categoryId, int views, string name, DateTime createDate, List<Post> posts)
+        public Topic(Guid id, int memberId, int categoryId, int views, string name, DateTime createDate, List<Post> posts, string userName)
         {
             Id = id;
             CategoryId = categoryId;
@@ -17,8 +17,9 @@ namespace UmderlakareUmbCms.Business.Entities
             Name = name;
             CreateDate = createDate;          
             Posts = posts;
-            
-            
+            UserName = userName;
+
+
 
         }
         public Guid Id
@@ -55,6 +56,10 @@ namespace UmderlakareUmbCms.Business.Entities
         {
             get;
             
+        }
+        public string UserName
+        {
+            get;
         }
 
     }

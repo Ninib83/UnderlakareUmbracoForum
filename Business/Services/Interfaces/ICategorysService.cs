@@ -12,12 +12,7 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
         IEnumerable<MainCategory> GetAllMainAndSubCategories();
         IEnumerable<SubCategory> GetAllSubCategories();
         IMainCategory GetMainCategoryById(int id);
-        ISubCategoy GetSubCategoryById(int id);
-
-        //ITopicPaging GetTopicsByCategory(int page, int size, int categoryId);
-
-
-
+        IEnumerable<SubCategoriesId> GetSubCategoryById(int id);
 
     }
 }

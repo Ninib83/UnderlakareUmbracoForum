@@ -8,10 +8,10 @@ namespace UmderlakareUmbCms.Business.Entities
 {
     public class Member : IMember
     {
-        public Member(int id, string username, string email, string avatar, DateTime? dateCreated,  DateTime? lastLoginDate, int postCount)
+        public Member(int id, string userName, string email, string avatar, DateTime? dateCreated,  DateTime? lastLoginDate, int postCount)
         {
             Id = id;
-            UserName = username;
+            UserName = userName;
             Email = email;
             Avatar = avatar;
             DateCreated = dateCreated;

@@ -1,0 +1,563 @@
+﻿ 2017-03-17 09:36:31,994 [P6116/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.9 application starting on NINIBZMEN76F7
+ 2017-03-17 09:36:32,029 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-03-17 09:36:32,048 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 18ms)
+ 2017-03-17 09:36:32,124 [P6116/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-03-17 09:36:32,132 [P6116/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-03-17 09:36:32,137 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-03-17 09:36:32,564 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 425ms)
+ 2017-03-17 09:36:32,581 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-03-17 09:36:32,598 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 17ms)
+ 2017-03-17 09:36:32,599 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-03-17 09:36:32,617 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 18ms)
+ 2017-03-17 09:36:32,640 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-03-17 09:36:32,651 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 11ms)
+ 2017-03-17 09:36:32,655 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-03-17 09:36:32,676 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 21ms)
+ 2017-03-17 09:36:32,679 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-03-17 09:36:32,695 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 14ms)
+ 2017-03-17 09:36:32,695 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-03-17 09:36:32,710 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 14ms)
+ 2017-03-17 09:36:34,123 [P6116/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-03-17 09:36:35,665 [P6116/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-03-17 09:36:35,684 [P6116/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-03-17 09:36:35,771 [P6116/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-03-17 09:36:35,805 [P6116/D2/T1] INFO  umbraco.content - Load Xml from file...
+ 2017-03-17 09:36:35,821 [P6116/D2/T1] INFO  umbraco.content - Loaded Xml from file.
+ 2017-03-17 09:36:36,407 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-03-17 09:36:36,444 [P6116/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 37ms)
+ 2017-03-17 09:36:38,910 [P6116/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 7008ms)
+ 2017-03-17 09:36:39,298 [P6116/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:2931/umbraco (UmbracoModule request)
+ 2017-03-17 09:36:40,128 [P6116/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-03-17 09:36:40,171 [P6116/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 36ms)
+ 2017-03-17 09:37:39,577 [P6116/D2/T15] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-16 09:37:39
+ 2017-03-17 09:42:33,519 [P6116/D2/T35] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 09:42:33,535 [P6116/D2/T35] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: ninib.ozmen@bbm.bonnier.se logged in from IP address ::1
+ 2017-03-17 09:42:33,712 [P6116/D2/T35] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-17 09:42:33,738 [P6116/D2/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 25ms)
+ 2017-03-17 09:42:33,923 [P6116/D2/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2017-03-17 09:42:34,024 [P6116/D2/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 101ms)
+ 2017-03-17 09:42:34,502 [P6116/D2/T36] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-17 09:42:34,508 [P6116/D2/T36] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 6ms)
+ 2017-03-17 09:42:34,524 [P6116/D2/T35] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-03-17 09:42:34,671 [P6116/D2/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 147ms)
+ 2017-03-17 09:42:34,719 [P6116/D2/T36] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-03-17 09:42:34,744 [P6116/D2/T36] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 25ms)
+ 2017-03-17 10:02:07,025 [P6116/D2/T33] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: ninib.ozmen@bbm.bonnier.se, IP Address: ::1
+ 2017-03-17 10:18:49,376 [P6116/D2/T20] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 10:18:49,376 [P6116/D2/T20] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: ninib.ozmen@bbm.bonnier.se logged in from IP address ::1
+ 2017-03-17 10:20:55,984 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2017-03-17 10:20:55,984 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2017-03-17 10:20:56,014 [P6116/D2/T15] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2017-03-17 10:20:56,350 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2017-03-17 10:20:56,350 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2017-03-17 10:20:56,352 [P6116/D2/T33] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2017-03-17 10:20:56,352 [P6116/D2/T36] INFO  Umbraco.Core.MainDom - Stopping...
+ 2017-03-17 10:20:56,371 [P6116/D2/T36] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2017-03-17 10:20:56,371 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2017-03-17 10:20:56,371 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2017-03-17 10:20:56,374 [P6116/D2/T20] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2017-03-17 10:20:56,381 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2017-03-17 10:20:56,381 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2017-03-17 10:20:56,382 [P6116/D2/T34] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2017-03-17 10:20:56,382 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2017-03-17 10:20:56,382 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2017-03-17 10:20:56,382 [P6116/D2/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2017-03-17 10:21:09,659 [P6116/D6/T53] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.9 application starting on NINIBZMEN76F7
+ 2017-03-17 10:21:09,711 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-03-17 10:21:09,740 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Hash determined (took 29ms)
+ 2017-03-17 10:21:09,884 [P6116/D6/T53] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-03-17 10:21:09,892 [P6116/D6/T53] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-03-17 10:21:09,909 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-03-17 10:21:10,732 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 823ms)
+ 2017-03-17 10:21:10,780 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-03-17 10:21:10,817 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 37ms)
+ 2017-03-17 10:21:10,818 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-03-17 10:21:10,868 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 49ms)
+ 2017-03-17 10:21:10,890 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-03-17 10:21:10,953 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 62ms)
+ 2017-03-17 10:21:10,971 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-03-17 10:21:11,037 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 66ms)
+ 2017-03-17 10:21:11,040 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-03-17 10:21:11,075 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 32ms)
+ 2017-03-17 10:21:11,076 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-03-17 10:21:11,133 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 56ms)
+ 2017-03-17 10:21:13,401 [P6116/D6/T53] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-03-17 10:21:15,664 [P6116/D6/T53] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-03-17 10:21:15,713 [P6116/D6/T53] INFO  Umbraco.Forms.Core.Cache.CacheEventHandler - Initializing Umbraco Forms Events to trigger Cache Refreshers
+ 2017-03-17 10:21:15,994 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFRecords] ([Id] INTEGER NOT NULL IDENTITY(1,1),
+[Form] UniqueIdentifier NOT NULL,
+[Created] DATETIME NOT NULL,
+[Updated] DATETIME NOT NULL,
+[CurrentPage] UniqueIdentifier NULL,
+[UmbracoPageId] INTEGER NULL,
+[IP] NVARCHAR(255) NULL,
+[MemberKey] NVARCHAR(255) NULL,
+[UniqueId] UniqueIdentifier NOT NULL,
+[State] NVARCHAR(50) NULL,
+[RecordData] NTEXT NOT NULL)
+ 2017-03-17 10:21:16,055 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Primary Key sql -1:
+ ALTER TABLE [UFRecords] ADD CONSTRAINT [PK_UFRecords] PRIMARY KEY CLUSTERED ([Id])
+ 2017-03-17 10:21:16,078 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFRecords
+ 2017-03-17 10:21:16,078 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFRecords
+ 2017-03-17 10:21:16,169 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFRecords' was created
+ 2017-03-17 10:21:16,192 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFRecordFields] ([Key] UniqueIdentifier NOT NULL,
+[FieldId] UniqueIdentifier NOT NULL,
+[Record] INTEGER NOT NULL,
+[Alias] NVARCHAR(255) NOT NULL,
+[DataType] NVARCHAR(255) NOT NULL)
+ 2017-03-17 10:21:16,219 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Primary Key sql -1:
+ ALTER TABLE [UFRecordFields] ADD CONSTRAINT [PK_UFRecordFields] PRIMARY KEY CLUSTERED ([Key])
+ 2017-03-17 10:21:16,219 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFRecordFields
+ 2017-03-17 10:21:16,219 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFRecordFields
+ 2017-03-17 10:21:16,258 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFRecordFields' was created
+ 2017-03-17 10:21:16,287 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFRecordDataString] ([Id] INTEGER NOT NULL IDENTITY(1,1),
+[Key] UniqueIdentifier NOT NULL,
+[Value] NVARCHAR(255) NOT NULL)
+ 2017-03-17 10:21:16,344 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Primary Key sql -1:
+ ALTER TABLE [UFRecordDataString] ADD CONSTRAINT [PK_UFRecordDataString] PRIMARY KEY CLUSTERED ([Id])
+ 2017-03-17 10:21:16,374 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFRecordDataString
+ 2017-03-17 10:21:16,375 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFRecordDataString
+ 2017-03-17 10:21:16,407 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Index sql -1:
+ CREATE NONCLUSTERED INDEX [IX_datastring_recordfield] ON [UFRecordDataString] ([Key])
+ 2017-03-17 10:21:16,425 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Foreign Key sql -1:
+ ALTER TABLE [UFRecordDataString] ADD CONSTRAINT [FK_UFRecordDataString_UFRecordFields_Key] FOREIGN KEY ([Key]) REFERENCES [UFRecordFields] ([Key])
+ 2017-03-17 10:21:16,447 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFRecordDataString' was created
+ 2017-03-17 10:21:16,479 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFRecordDataLongString] ([Id] INTEGER NOT NULL IDENTITY(1,1),
+[Key] UniqueIdentifier NOT NULL,
+[Value] NTEXT NULL)
+ 2017-03-17 10:21:16,482 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Primary Key sql -1:
+ ALTER TABLE [UFRecordDataLongString] ADD CONSTRAINT [PK_UFRecordDataLongString] PRIMARY KEY CLUSTERED ([Id])
+ 2017-03-17 10:21:16,482 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFRecordDataLongString
+ 2017-03-17 10:21:16,482 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFRecordDataLongString
+ 2017-03-17 10:21:16,497 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Index sql -1:
+ CREATE NONCLUSTERED INDEX [IX_datalongstring_recordfield] ON [UFRecordDataLongString] ([Key])
+ 2017-03-17 10:21:16,498 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Foreign Key sql -1:
+ ALTER TABLE [UFRecordDataLongString] ADD CONSTRAINT [FK_UFRecordDataLongString_UFRecordFields_Key] FOREIGN KEY ([Key]) REFERENCES [UFRecordFields] ([Key])
+ 2017-03-17 10:21:16,499 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFRecordDataLongString' was created
+ 2017-03-17 10:21:16,514 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFRecordDataInteger] ([Id] INTEGER NOT NULL IDENTITY(1,1),
+[Key] UniqueIdentifier NOT NULL,
+[Value] INTEGER NULL)
+ 2017-03-17 10:21:16,516 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Primary Key sql -1:
+ ALTER TABLE [UFRecordDataInteger] ADD CONSTRAINT [PK_UFRecordDataInteger] PRIMARY KEY CLUSTERED ([Id])
+ 2017-03-17 10:21:16,526 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFRecordDataInteger
+ 2017-03-17 10:21:16,526 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFRecordDataInteger
+ 2017-03-17 10:21:16,530 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Index sql -1:
+ CREATE NONCLUSTERED INDEX [IX_datainteger_recordfield] ON [UFRecordDataInteger] ([Key])
+ 2017-03-17 10:21:16,530 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Foreign Key sql -1:
+ ALTER TABLE [UFRecordDataInteger] ADD CONSTRAINT [FK_UFRecordDataInteger_UFRecordFields_Key] FOREIGN KEY ([Key]) REFERENCES [UFRecordFields] ([Key])
+ 2017-03-17 10:21:16,532 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFRecordDataInteger' was created
+ 2017-03-17 10:21:16,546 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFRecordDataBit] ([Id] INTEGER NOT NULL IDENTITY(1,1),
+[Key] UniqueIdentifier NOT NULL,
+[Value] BIT NULL)
+ 2017-03-17 10:21:16,550 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Primary Key sql -1:
+ ALTER TABLE [UFRecordDataBit] ADD CONSTRAINT [PK_UFRecordDataBit] PRIMARY KEY CLUSTERED ([Id])
+ 2017-03-17 10:21:16,551 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFRecordDataBit
+ 2017-03-17 10:21:16,551 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFRecordDataBit
+ 2017-03-17 10:21:16,562 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Index sql -1:
+ CREATE NONCLUSTERED INDEX [IX_databit_recordfield] ON [UFRecordDataBit] ([Key])
+ 2017-03-17 10:21:16,564 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Foreign Key sql -1:
+ ALTER TABLE [UFRecordDataBit] ADD CONSTRAINT [FK_UFRecordDataBit_UFRecordFields_Key] FOREIGN KEY ([Key]) REFERENCES [UFRecordFields] ([Key])
+ 2017-03-17 10:21:16,565 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFRecordDataBit' was created
+ 2017-03-17 10:21:16,577 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFRecordDataDateTime] ([Id] INTEGER NOT NULL IDENTITY(1,1),
+[Key] UniqueIdentifier NOT NULL,
+[Value] DATETIME NULL)
+ 2017-03-17 10:21:16,580 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Primary Key sql -1:
+ ALTER TABLE [UFRecordDataDateTime] ADD CONSTRAINT [PK_UFRecordDataDateTime] PRIMARY KEY CLUSTERED ([Id])
+ 2017-03-17 10:21:16,580 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFRecordDataDateTime
+ 2017-03-17 10:21:16,580 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFRecordDataDateTime
+ 2017-03-17 10:21:16,582 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Index sql -1:
+ CREATE NONCLUSTERED INDEX [IX_datadatetime_recordfield] ON [UFRecordDataDateTime] ([Key])
+ 2017-03-17 10:21:16,583 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Foreign Key sql -1:
+ ALTER TABLE [UFRecordDataDateTime] ADD CONSTRAINT [FK_UFRecordDataDateTime_UFRecordFields_Key] FOREIGN KEY ([Key]) REFERENCES [UFRecordFields] ([Key])
+ 2017-03-17 10:21:16,584 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFRecordDataDateTime' was created
+ 2017-03-17 10:21:16,598 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFUserSecurity] ([User] NVARCHAR(50) NOT NULL,
+[ManageDataSources] BIT NOT NULL,
+[ManagePreValueSources] BIT NOT NULL,
+[ManageWorkflows] BIT NOT NULL,
+[ManageForms] BIT NOT NULL)
+ 2017-03-17 10:21:16,598 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFUserSecurity
+ 2017-03-17 10:21:16,598 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFUserSecurity
+ 2017-03-17 10:21:16,599 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFUserSecurity' was created
+ 2017-03-17 10:21:16,615 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Create Table sql -1:
+ CREATE TABLE [UFUserFormSecurity] ([Id] INTEGER NOT NULL IDENTITY(1,1),
+[User] NVARCHAR(50) NOT NULL,
+[Form] UniqueIdentifier NOT NULL,
+[HasAccess] BIT NOT NULL,
+[AllowInEditor] BIT NOT NULL,
+[SecurityType] INTEGER NOT NULL)
+ 2017-03-17 10:21:16,617 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - Primary Key sql -1:
+ ALTER TABLE [UFUserFormSecurity] ADD CONSTRAINT [Id] PRIMARY KEY CLUSTERED ([Id])
+ 2017-03-17 10:21:16,619 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Creating data in table UFUserFormSecurity
+ 2017-03-17 10:21:16,619 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Migrations.Initial.BaseDataCreation - Done creating data in table UFUserFormSecurity
+ 2017-03-17 10:21:16,643 [P6116/D6/T53] INFO  Umbraco.Core.Persistence.Database - New table 'UFUserFormSecurity' was created
+ 2017-03-17 10:21:16,710 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-03-17 10:21:16,737 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 26ms)
+ 2017-03-17 10:21:17,751 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2017-03-17 10:21:17,825 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 74ms)
+ 2017-03-17 10:21:18,286 [P6116/D6/T53] INFO  umbraco.content - Load Xml from file...
+ 2017-03-17 10:21:18,292 [P6116/D6/T53] INFO  umbraco.content - Loaded Xml from file.
+ 2017-03-17 10:21:18,930 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-03-17 10:21:18,994 [P6116/D6/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 60ms)
+ 2017-03-17 10:21:24,034 [P6116/D6/T53] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-03-17 10:21:24,149 [P6116/D6/T53] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-03-17 10:21:24,229 [P6116/D6/T53] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 14686ms)
+ 2017-03-17 10:21:24,765 [P6116/D6/T33] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:2931/umbraco (UmbracoModule request)
+ 2017-03-17 10:21:25,184 [P6116/D6/T16] INFO  Umbraco.Core.MainDom - Stopping...
+ 2017-03-17 10:21:25,216 [P6116/D6/T16] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2017-03-17 10:21:25,813 [P6116/D6/T35] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IPackageAction
+ 2017-03-17 10:21:25,880 [P6116/D6/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IPackageAction, found 0 (took 66ms)
+ 2017-03-17 10:21:26,515 [P6116/D2/T36] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: BinDirChangeOrDirectoryRename
+
+_shutDownMessage=Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+HostingEnvironment initiated shutdown
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Ändringsaviseringar för viktiga kataloger.
+bin dir change or directory rename
+Change in C:\Users\ninibozmen\AppData\Local\Temp\Temporary ASP.NET Files\vs\b43db2ab\a9d1e13d\hash\hash.web
+Change in C:\Users\ninibozmen\AppData\Local\Temp\Temporary ASP.NET Files\vs\b43db2ab\a9d1e13d\hash\hash.web
+CONFIG change
+CONFIG change
+HostingEnvironment orsakade avslut
+
+_shutDownStack=   vid System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   vid System.Environment.get_StackTrace()
+   vid System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   vid System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   vid System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   vid System.Web.HttpRuntime.OnCriticalDirectoryChange(Object sender, FileChangeEvent e)
+   vid System.Web.FileChangesMonitor.OnCriticaldirChange(Object sender, FileChangeEvent e)
+   vid System.Web.DirectoryMonitor.FireNotifications()
+   vid System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   vid System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   vid System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   vid System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   vid System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   vid System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   vid System.Threading.ThreadPoolWorkQueue.Dispatch()
+   vid System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2017-03-17 10:21:33,423 [P6116/D8/T48] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.9 application starting on NINIBZMEN76F7
+ 2017-03-17 10:21:33,463 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-03-17 10:21:33,513 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Hash determined (took 50ms)
+ 2017-03-17 10:21:33,614 [P6116/D8/T48] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-03-17 10:21:33,629 [P6116/D8/T48] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-03-17 10:21:33,634 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-03-17 10:21:34,692 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 1058ms)
+ 2017-03-17 10:21:34,741 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-03-17 10:21:34,770 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 28ms)
+ 2017-03-17 10:21:34,771 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-03-17 10:21:34,807 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 36ms)
+ 2017-03-17 10:21:34,833 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-03-17 10:21:34,858 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 24ms)
+ 2017-03-17 10:21:34,869 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-03-17 10:21:34,930 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 61ms)
+ 2017-03-17 10:21:34,938 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-03-17 10:21:34,961 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 21ms)
+ 2017-03-17 10:21:34,967 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-03-17 10:21:34,997 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 29ms)
+ 2017-03-17 10:21:37,118 [P6116/D8/T48] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-03-17 10:21:37,463 [P6116/D8/T48] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-03-17 10:21:37,544 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-03-17 10:21:37,592 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 48ms)
+ 2017-03-17 10:21:38,045 [P6116/D8/T48] INFO  Umbraco.Forms.Core.Cache.CacheEventHandler - Initializing Umbraco Forms Events to trigger Cache Refreshers
+ 2017-03-17 10:21:38,085 [P6116/D8/T48] INFO  umbraco.content - Load Xml from file...
+ 2017-03-17 10:21:38,088 [P6116/D8/T48] INFO  umbraco.content - Loaded Xml from file.
+ 2017-03-17 10:21:38,616 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-03-17 10:21:38,683 [P6116/D8/T48] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 66ms)
+ 2017-03-17 10:21:43,842 [P6116/D8/T48] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-03-17 10:21:43,949 [P6116/D8/T48] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-03-17 10:21:44,000 [P6116/D8/T48] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 10681ms)
+ 2017-03-17 10:21:44,475 [P6116/D8/T28] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:2931/umbraco (UmbracoModule request)
+ 2017-03-17 10:21:46,304 [P6116/D8/T35] INFO  Umbraco.Core.Configuration.ClientDependencyConfiguration - Updated version number from 1061450464 to 7429135
+ 2017-03-17 10:21:46,308 [P6116/D8/T35] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-03-17 10:21:46,350 [P6116/D8/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 42ms)
+ 2017-03-17 10:21:46,373 [P6116/D8/T35] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-17 10:21:46,396 [P6116/D8/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 23ms)
+ 2017-03-17 10:21:46,414 [P6116/D8/T35] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-03-17 10:21:46,457 [P6116/D8/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 42ms)
+ 2017-03-17 10:21:46,553 [P6116/D8/T35] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2017-03-17 10:21:46,597 [P6116/D8/T35] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 44ms)
+ 2017-03-17 10:21:46,909 [P6116/D8/T35] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2017-03-17 10:21:46,909 [P6116/D8/T35] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2017-03-17 10:21:46,912 [P6116/D8/T35] INFO  Umbraco.Core.MainDom - Stopping...
+ 2017-03-17 10:21:46,912 [P6116/D8/T28] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2017-03-17 10:21:55,304 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating (immediate)
+ 2017-03-17 10:21:55,304 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Cancelling tasks
+ 2017-03-17 10:21:55,459 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks cancelled, terminated
+ 2017-03-17 10:21:55,461 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating (immediate)
+ 2017-03-17 10:21:55,461 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Cancelling tasks
+ 2017-03-17 10:21:55,580 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks cancelled, terminated
+ 2017-03-17 10:21:55,590 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating (immediate)
+ 2017-03-17 10:21:55,590 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Cancelling tasks
+ 2017-03-17 10:21:55,703 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks cancelled, terminated
+ 2017-03-17 10:21:55,703 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating (immediate)
+ 2017-03-17 10:21:55,703 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Cancelling tasks
+ 2017-03-17 10:21:55,870 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks cancelled, terminated
+ 2017-03-17 10:21:55,870 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating (immediate)
+ 2017-03-17 10:21:55,870 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Cancelling tasks
+ 2017-03-17 10:21:55,980 [P6116/D6/T16] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks cancelled, terminated
+ 2017-03-17 10:21:55,983 [P6116/D6/T16] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: ConfigurationChange
+
+_shutDownMessage=CONFIG change
+HostingEnvironment initiated shutdown
+CONFIG change
+CONFIG change
+CONFIG change
+CONFIG change
+HostingEnvironment orsakade avslut
+
+_shutDownStack=   vid System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   vid System.Environment.get_StackTrace()
+   vid System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   vid System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   vid System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   vid System.Web.Configuration.HttpConfigurationSystem.OnConfigurationChanged(Object sender, InternalConfigEventArgs e)
+   vid System.Configuration.Internal.InternalConfigRoot.OnConfigChanged(InternalConfigEventArgs e)
+   vid System.Configuration.BaseConfigurationRecord.OnStreamChanged(String streamname)
+   vid System.Web.Configuration.WebConfigurationHostFileChange.OnFileChanged(Object sender, FileChangeEvent e)
+   vid System.Web.DirectoryMonitor.FireNotifications()
+   vid System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   vid System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   vid System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   vid System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   vid System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   vid System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   vid System.Threading.ThreadPoolWorkQueue.Dispatch()
+   vid System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2017-03-17 10:21:56,890 [P6116/D10/T53] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.9 application starting on NINIBZMEN76F7
+ 2017-03-17 10:21:56,940 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-03-17 10:21:56,968 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Hash determined (took 28ms)
+ 2017-03-17 10:21:57,077 [P6116/D10/T53] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-03-17 10:21:57,078 [P6116/D10/T53] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-03-17 10:21:57,120 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-03-17 10:21:57,155 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 35ms)
+ 2017-03-17 10:21:57,193 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-03-17 10:21:57,194 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+ 2017-03-17 10:21:57,194 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-03-17 10:21:57,196 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 2ms)
+ 2017-03-17 10:21:57,223 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-03-17 10:21:57,226 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 2ms)
+ 2017-03-17 10:21:57,226 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-03-17 10:21:57,240 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 14ms)
+ 2017-03-17 10:21:57,244 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-03-17 10:21:57,246 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 1ms)
+ 2017-03-17 10:21:57,247 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-03-17 10:21:57,248 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2017-03-17 10:22:00,037 [P6116/D10/T53] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-03-17 10:22:00,438 [P6116/D10/T53] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-03-17 10:22:00,492 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-03-17 10:22:00,499 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 7ms)
+ 2017-03-17 10:22:01,004 [P6116/D10/T53] INFO  Umbraco.Forms.Core.Cache.CacheEventHandler - Initializing Umbraco Forms Events to trigger Cache Refreshers
+ 2017-03-17 10:22:01,089 [P6116/D10/T53] INFO  umbraco.content - Load Xml from file...
+ 2017-03-17 10:22:01,098 [P6116/D10/T53] INFO  umbraco.content - Loaded Xml from file.
+ 2017-03-17 10:22:02,007 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-03-17 10:22:02,028 [P6116/D10/T53] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 20ms)
+ 2017-03-17 10:22:08,253 [P6116/D10/T53] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-03-17 10:22:08,337 [P6116/D10/T53] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-03-17 10:22:08,380 [P6116/D10/T53] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 11665ms)
+ 2017-03-17 10:22:09,734 [P6116/D10/T21] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:2931/umbraco (UmbracoModule request)
+ 2017-03-17 10:22:18,437 [P6116/D10/T5] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-17 10:22:18,450 [P6116/D10/T5] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 9ms)
+ 2017-03-17 10:22:18,517 [P6116/D10/T34] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-03-17 10:22:18,527 [P6116/D10/T34] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 10ms)
+ 2017-03-17 10:22:18,542 [P6116/D10/T34] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-17 10:22:18,542 [P6116/D10/T34] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-03-17 10:22:18,545 [P6116/D10/T34] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ITree
+ 2017-03-17 10:22:18,545 [P6116/D10/T34] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ITree, found 0 (took 0ms)
+ 2017-03-17 10:22:18,706 [P6116/D10/T34] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplication
+ 2017-03-17 10:22:18,707 [P6116/D10/T34] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplication, found 0 (took 1ms)
+ 2017-03-17 10:22:25,786 [P6116/D8/T44] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: ConfigurationChange
+
+_shutDownMessage=CONFIG change
+HostingEnvironment initiated shutdown
+CONFIG change
+HostingEnvironment orsakade avslut
+
+_shutDownStack=   vid System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   vid System.Environment.get_StackTrace()
+   vid System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   vid System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   vid System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   vid System.Web.Configuration.HttpConfigurationSystem.OnConfigurationChanged(Object sender, InternalConfigEventArgs e)
+   vid System.Configuration.Internal.InternalConfigRoot.OnConfigChanged(InternalConfigEventArgs e)
+   vid System.Configuration.BaseConfigurationRecord.OnStreamChanged(String streamname)
+   vid System.Web.Configuration.WebConfigurationHostFileChange.OnFileChanged(Object sender, FileChangeEvent e)
+   vid System.Web.DirectoryMonitor.FireNotifications()
+   vid System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   vid System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   vid System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   vid System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   vid System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   vid System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   vid System.Threading.ThreadPoolWorkQueue.Dispatch()
+   vid System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+ 2017-03-17 10:23:16,592 [P6116/D10/T16] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-16 10:23:16
+ 2017-03-17 10:41:14,337 [P6116/D10/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2017-03-17 10:41:14,397 [P6116/D10/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 60ms)
+ 2017-03-17 10:48:42,442 [P6116/D10/T66] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-17 10:48:42,443 [P6116/D10/T66] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-03-17 10:49:38,817 [P6116/D10/T55] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.HealthCheck.HealthCheck
+ 2017-03-17 10:49:39,004 [P6116/D10/T55] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.HealthCheck.HealthCheck, found 0 (took 186ms)
+ 2017-03-17 10:50:10,981 [P6116/D10/T30] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-03-17 10:50:10,981 [P6116/D10/T30] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 0ms)
+ 2017-03-17 11:24:24,709 [P6116/D10/T78] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Trees.TreeController
+ 2017-03-17 11:24:24,710 [P6116/D10/T78] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Trees.TreeController, found 0 (took 0ms)
+ 2017-03-17 11:41:02,498 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:02,499 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:02,499 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:02,508 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:02,548 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2017-03-17 11:41:02,548 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2017-03-17 11:41:03,150 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,150 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,150 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,166 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,166 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,166 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,201 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,201 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,201 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,216 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,216 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,216 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,246 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,246 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,246 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,253 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,253 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,253 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,274 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,274 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,274 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,295 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,295 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,295 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,316 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,316 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,316 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:03,324 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 11:41:03,324 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 11:41:03,324 [P6116/D10/T41] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 11:41:04,180 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,188 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,197 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,205 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,263 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,270 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,324 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,358 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,390 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,434 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,466 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,477 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,496 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:41:04,499 [P6116/D10/T52] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 11:56:21,029 [P6116/D10/T57] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: ninib.ozmen@bbm.bonnier.se, IP Address: ::1
+ 2017-03-17 12:57:22,087 [P6116/D10/T28] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 12:57:29,877 [P6116/D10/T34] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 12:57:29,877 [P6116/D10/T34] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: ninib.ozmen@bbm.bonnier.se logged in from IP address ::1
+ 2017-03-17 13:03:49,229 [P6116/D10/T71] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2017-03-17 13:03:49,229 [P6116/D10/T71] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2017-03-17 13:06:28,807 [P6116/D10/T5] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field values
+ 2017-03-17 13:08:18,664 [P6116/D10/T33] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Editors.IEditorValidator
+ 2017-03-17 13:08:18,691 [P6116/D10/T33] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Editors.IEditorValidator, found 0 (took 28ms)
+ 2017-03-17 13:09:22,019 [P6116/D10/T59] INFO  umbraco.content - Loading content from database...
+ 2017-03-17 13:09:26,299 [P6116/D10/T10] INFO  umbraco.content - Save Xml to file...
+ 2017-03-17 13:09:26,451 [P6116/D10/T10] INFO  umbraco.content - Saved Xml to file.
+ 2017-03-17 13:27:01,835 [P6116/D10/T71] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: ninib.ozmen@bbm.bonnier.se, IP Address: ::1
+ 2017-03-17 13:56:04,433 [P6116/D10/T85] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 13:56:04,434 [P6116/D10/T85] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: ninib.ozmen@bbm.bonnier.se logged in from IP address ::1
+ 2017-03-17 13:57:45,801 [P6116/D10/T13] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,060 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field editor
+ 2017-03-17 13:57:46,060 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field hideLabel
+ 2017-03-17 13:57:46,107 [P6116/D10/T71] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,107 [P6116/D10/T71] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,107 [P6116/D10/T71] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,297 [P6116/D10/T69] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,334 [P6116/D10/T69] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,378 [P6116/D10/T69] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,389 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,464 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,473 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,485 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,509 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,518 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,546 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,568 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,582 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,625 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,650 [P6116/D10/T21] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field default
+ 2017-03-17 13:57:46,817 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,817 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,822 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,834 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,834 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,834 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,844 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,844 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,845 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,890 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,890 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,890 [P6116/D10/T71] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,890 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,890 [P6116/D10/T71] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,890 [P6116/D10/T71] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,907 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,907 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,907 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,935 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,935 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,935 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,947 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,947 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,947 [P6116/D10/T85] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,962 [P6116/D10/T51] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,962 [P6116/D10/T51] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,962 [P6116/D10/T51] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 13:57:46,980 [P6116/D10/T74] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field min
+ 2017-03-17 13:57:46,980 [P6116/D10/T74] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field step
+ 2017-03-17 13:57:46,980 [P6116/D10/T74] WARN  Umbraco.Web.Models.Mapping.PreValueDisplayResolver - Could not find persisted pre-value for field max
+ 2017-03-17 14:15:35,418 [P6116/D10/T69] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: ninib.ozmen@bbm.bonnier.se, IP Address: ::1
+ 2017-03-17 15:17:12,609 [P6116/D10/T16] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-16 15:17:12
+ 2017-03-17 15:28:29,709 [P6116/D10/T77] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt failed for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 15:28:35,203 [P6116/D10/T80] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 15:28:35,203 [P6116/D10/T80] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: ninib.ozmen@bbm.bonnier.se logged in from IP address ::1
+ 2017-03-17 15:48:06,817 [P6116/D10/T30] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: ninib.ozmen@bbm.bonnier.se, IP Address: ::1
+ 2017-03-17 16:04:34,547 [P6116/D10/T66] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 16:04:34,547 [P6116/D10/T66] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: ninib.ozmen@bbm.bonnier.se logged in from IP address ::1
+ 2017-03-17 16:24:05,464 [P6116/D10/T8] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: ninib.ozmen@bbm.bonnier.se, IP Address: ::1
+ 2017-03-17 16:24:19,369 [P6116/D10/T88] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username ninib.ozmen@bbm.bonnier.se from IP address ::1
+ 2017-03-17 16:24:19,369 [P6116/D10/T88] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: ninib.ozmen@bbm.bonnier.se logged in from IP address ::1

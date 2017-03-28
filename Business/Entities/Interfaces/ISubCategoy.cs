@@ -5,7 +5,7 @@ using System.Web;
 
 namespace UmderlakareUmbCms.Business.Entities.Interfaces
 {
-    public interface ISubCategoy
+    public interface SubCategoy
     {
         int Id { get; }
         string Name { get; }

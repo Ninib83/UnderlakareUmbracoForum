@@ -20,6 +20,8 @@ namespace UmderlakareUmbCms
 
             GlobalConfiguration.Configuration.Services.
                Replace(typeof(IHttpControllerActivator), new UmbracoWebApiHttpControllerActivator());
+
+
         }
 
     }

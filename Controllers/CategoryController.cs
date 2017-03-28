@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Net;
 using System.Web.Http;
+using UmderlakareUmbCms.Business.Registries;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 
 namespace UmderlakareUmbCms.Controllers
 {
+    [IncludeInApiExplorer]
     [RoutePrefix("api/v1/categories")]
     public class CategoryController : ApiController
     {

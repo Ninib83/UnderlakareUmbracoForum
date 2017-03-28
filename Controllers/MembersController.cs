@@ -2,10 +2,12 @@
 using System.Net;
 using System.Web.Http;
 using UmderlakareUmbCms.Business.Entities.ViewModel;
+using UmderlakareUmbCms.Business.Registries;
 using UmderlakareUmbCms.Business.Services.Interfaces;
 
 namespace UmderlakareUmbCms.Controllers
 {
+    [IncludeInApiExplorer]
     [RoutePrefix("api/v1/members")]
     public class MembersController : ApiController
     {
@@ -126,6 +128,22 @@ namespace UmderlakareUmbCms.Controllers
             try
             {
                 _membersService.Register(vm);
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                return Content(HttpStatusCode.InternalServerError, "something went wrong");
+            }
+        }
+
+        [HttpPost]
+        [Route("member/resetPasword")]
+        public IHttpActionResult ResetPassword(Dialogue.Logic.Models.Member member, string newPassword)
+        {
+            try
+            {
+                _membersService.ResetPassword(member, newPassword);
                 return Ok();
             }
             catch (Exception)

@@ -1,0 +1,41 @@
+﻿ 2017-03-16 14:30:27,320 [P8712/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.9 application starting on NINIBZMEN76F7
+ 2017-03-16 14:30:27,361 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-03-16 14:30:27,446 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 85ms)
+ 2017-03-16 14:30:27,515 [P8712/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-03-16 14:30:27,516 [P8712/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-03-16 14:30:27,522 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-03-16 14:30:28,038 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 516ms)
+ 2017-03-16 14:30:28,054 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-03-16 14:30:28,071 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 17ms)
+ 2017-03-16 14:30:28,074 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-03-16 14:30:28,091 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 17ms)
+ 2017-03-16 14:30:28,109 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-03-16 14:30:28,132 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 22ms)
+ 2017-03-16 14:30:28,134 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-03-16 14:30:28,159 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 25ms)
+ 2017-03-16 14:30:28,165 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-03-16 14:30:28,177 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 12ms)
+ 2017-03-16 14:30:28,178 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-03-16 14:30:28,194 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 15ms)
+ 2017-03-16 14:30:29,895 [P8712/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-03-16 14:30:33,590 [P8712/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-03-16 14:30:33,613 [P8712/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-03-16 14:30:33,837 [P8712/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-03-16 14:30:33,942 [P8712/D2/T1] INFO  umbraco.content - Load Xml from file...
+ 2017-03-16 14:30:33,959 [P8712/D2/T1] INFO  umbraco.content - Loaded Xml from file.
+ 2017-03-16 14:30:35,376 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-03-16 14:30:35,413 [P8712/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 36ms)
+ 2017-03-16 14:30:39,228 [P8712/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 12051ms)
+ 2017-03-16 14:30:39,988 [P8712/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:2931/umbraco (UmbracoModule request)
+ 2017-03-16 14:30:40,752 [P8712/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.ICacheRefresher
+ 2017-03-16 14:30:40,812 [P8712/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 0 (took 60ms)
+ 2017-03-16 14:30:42,024 [P8712/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-03-16 14:30:42,054 [P8712/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 27ms)
+ 2017-03-16 14:31:04,685 [P8712/D2/T6] INFO  UmbracoExamine.DataServices.UmbracoLogService - Field "email" is listed multiple times in the index set "InternalMemberIndexSet". Please ensure all names are unique, Provider=InternalMemberIndexer, NodeId=1083
+ 2017-03-16 14:31:04,879 [P8712/D2/T6] INFO  UmbracoExamine.DataServices.UmbracoLogService - Field "email" is listed multiple times in the index set "InternalMemberIndexSet". Please ensure all names are unique, Provider=InternalMemberIndexer, NodeId=1083
+ 2017-03-16 14:31:06,731 [P8712/D2/T6] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2017-03-16 14:31:40,425 [P8712/D2/T6] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2017-03-16 14:31:40,749 [P8712/D2/T14] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2017-03-15 14:31:40
+ 2017-03-16 14:31:48,763 [P8712/D2/T7] INFO  Umbraco.Core.Security.UmbracoMembershipProviderBase - Login attempt succeeded for username oscar from IP address ::1
+ 2017-03-16 14:31:55,379 [P8712/D2/T7] INFO  UmbracoExamine.DataServices.UmbracoLogService - Field "email" is listed multiple times in the index set "InternalMemberIndexSet". Please ensure all names are unique, Provider=InternalMemberIndexer, NodeId=1084
+ 2017-03-16 14:31:55,379 [P8712/D2/T7] INFO  UmbracoExamine.DataServices.UmbracoLogService - Field "email" is listed multiple times in the index set "InternalMemberIndexSet". Please ensure all names are unique, Provider=InternalMemberIndexer, NodeId=1084

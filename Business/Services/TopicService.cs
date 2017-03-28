@@ -50,9 +50,7 @@ namespace UmderlakareUmbCms.Business.Services
             var topics = _topicService.Get(id);
             List<Topic> listOfTopics = new List<Topic>();
 
-
-            
-                List<Post> listOfPostsInTopic = new List<Post>();
+            List<Post> listOfPostsInTopic = new List<Post>();
                 foreach (var post in topics.Posts)
                 {
                     var member = _memberService.GetMemberById(post.MemberId);
@@ -61,7 +59,7 @@ namespace UmderlakareUmbCms.Business.Services
                 }
             
 
-            return new Topic(topics.Id, topics.MemberId, topics.CategoryId, topics.Views, topics.Name, topics.CreateDate, listOfPostsInTopic);
+            return new Topic(topics.Id, topics.MemberId, topics.CategoryId, topics.Views, topics.Name, topics.CreateDate, listOfPostsInTopic, topics.Member.UserName);
         }
 
         #endregion
@@ -83,8 +81,8 @@ namespace UmderlakareUmbCms.Business.Services
                     var po = new Post(post.Id, post.MemberId, post.PostContent, post.DateCreated, topic.Id, member.UserName);
                     listOfPostsInTopic.Add(po);
                 }
-
-                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic);
+                var memberInTopic = _memberService.GetMemberById(topic.MemberId);
+                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
                 listOfTopics.Add(topi);
             }
             return listOfTopics.ToList();
@@ -107,8 +105,8 @@ namespace UmderlakareUmbCms.Business.Services
                     var po = new Post(post.Id, post.MemberId, post.PostContent, post.DateCreated, topic.Id, member.UserName);
                     listOfPostsInTopic.Add(po);
                 }
-
-                var customTopic = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic);
+                var memberInTopic = _memberService.GetMemberById(topic.MemberId);
+                var customTopic = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
                 topicList.Add(customTopic);
 
             }
@@ -121,7 +119,7 @@ namespace UmderlakareUmbCms.Business.Services
         #region Get Topic By CategoryId
         public ITopicPaging GetTopicByCategoryId(int categoryId,int page, int pageSize, int amountToTake)
         {
-
+            //Ha med usename
 
             var topics = _topicService.GetPagedTopicsByCategory(page, pageSize, Int32.MaxValue, categoryId);
             var hasMore = PagingHelper.HasMore(page, pageSize, topics.TotalCount);

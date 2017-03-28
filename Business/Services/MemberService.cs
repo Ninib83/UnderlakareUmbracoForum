@@ -67,7 +67,16 @@ namespace UmderlakareUmbCms.Business.Services
         }
         #endregion
 
-       
+        #region Reset  Password
+
+
+        public void ResetPassword(Dialogue.Logic.Models.Member member, string newPassword)
+        {
+            var reset = _memberService.ResetPassword(member, newPassword);
+        }
+
+        #endregion
+
         //Klar
         #region Get Member By Email Request
         public IMember GetMemberByEmail(string email)
@@ -115,6 +124,7 @@ namespace UmderlakareUmbCms.Business.Services
                               member.LastLoginDate, 
                               member.PostCount);
         }
+
 
 
         #endregion

@@ -13,6 +13,7 @@ namespace UmderlakareUmbCms.Business.Entities
     {
         private Dialogue.Logic.Services.PostService _postService = new Dialogue.Logic.Services.PostService();
         
+
         public TopicPaging(bool hasMore, int totalMatching, PagedList<Dialogue.Logic.Models.Topic> topics)
             :base(hasMore, totalMatching)
         {
@@ -32,8 +33,9 @@ namespace UmderlakareUmbCms.Business.Entities
                         listOfPosts.Add(po);
                    
                 }
-
-                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPosts);
+                // behöver ha med username
+                //var memberInTopic = _memberService.GetMemberById(topic.MemberId);
+                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPosts, topic.Member.UserName);
                 listOfTopicInCat.Add(topi);
                
             }

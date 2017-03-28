@@ -6,7 +6,7 @@ using UmderlakareUmbCms.Business.Entities.Interfaces;
 
 namespace UmderlakareUmbCms.Business.Entities
 {
-    public class SubCategory : ISubCategoy
+    public class SubCategory : SubCategoy
     {
         public SubCategory(int id, string name, int topicCount, int postCount, LastTopic lastTopic, LastPost lastPost)
         {

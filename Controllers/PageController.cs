@@ -3,10 +3,12 @@ using System.Net;
 using System.Web.Http;
 using Umbraco.Core.Services;
 using UmderlakareUmbCms.Business.Entities;
+using UmderlakareUmbCms.Business.Registries;
 
 namespace UmderlakareUmbCms.Controllers
 {
-    [RoutePrefix("api/v1/blogs")]
+    [IncludeInApiExplorer]
+    [RoutePrefix("api/v1/Page")]
     public class PageController : ApiController
     {
         private readonly IContentService _contentService;
@@ -26,7 +28,7 @@ namespace UmderlakareUmbCms.Controllers
                 var page = _contentService.GetById(id);
                 if (page == null)
                     return Content(HttpStatusCode.NotFound, 
-                            new ApiResponse((int)HttpStatusCode.NotFound, "Blogposten hittades inte"));
+                            new ApiResponse((int)HttpStatusCode.NotFound, "Sidan hittades inte"));
 
                 return Ok(page);
             }
