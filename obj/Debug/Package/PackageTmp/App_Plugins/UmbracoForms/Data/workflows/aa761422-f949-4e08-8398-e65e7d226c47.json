@@ -1,0 +1,16 @@
+{
+  "id": "aa761422-f949-4e08-8398-e65e7d226c47",
+  "name": "Send email to ninib.ozmen@bbm.bonnier.se",
+  "form": "2849dc15-15ae-4ee0-bab4-c02f6e59b50e",
+  "active": true,
+  "workflowTypeId": "e96badd7-05be-4978-b8d9-b3d733de70a5",
+  "executesOn": "Submitted",
+  "settings": {
+    "Email": "ninib.ozmen@bbm.bonnier.se",
+    "SenderEmail": "",
+    "Subject": "The Form '{form_name}' was submitted",
+    "Message": "The Form '{form_name} was submitted, this is the list of values it contained. You can turn this email off under workflows in Umbraco Forms.",
+    "Attachment": ""
+  },
+  "sortOrder": 1
+}

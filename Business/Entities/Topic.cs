@@ -8,7 +8,7 @@ namespace UmderlakareUmbCms.Business.Entities
 {
     public class Topic : ITopic
     {
-        public Topic(Guid id, int memberId, int categoryId, int views, string name, DateTime createDate, List<Post> posts, string userName)
+        public Topic(Guid id, int memberId, int categoryId, int views, string name, DateTime createDate, List<Post> posts, string userName, DateTime? memberDateCreate)
         {
             Id = id;
             CategoryId = categoryId;
@@ -18,6 +18,7 @@ namespace UmderlakareUmbCms.Business.Entities
             CreateDate = createDate;          
             Posts = posts;
             UserName = userName;
+            MemberDateCreate = memberDateCreate;
 
 
 
@@ -61,6 +62,9 @@ namespace UmderlakareUmbCms.Business.Entities
         {
             get;
         }
-
+        public DateTime? MemberDateCreate
+        {
+            get;
+        }
     }
 }

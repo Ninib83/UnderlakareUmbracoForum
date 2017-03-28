@@ -59,7 +59,7 @@ namespace UmderlakareUmbCms.Business.Services
                 }
             
 
-            return new Topic(topics.Id, topics.MemberId, topics.CategoryId, topics.Views, topics.Name, topics.CreateDate, listOfPostsInTopic, topics.Member.UserName);
+            return new Topic(topics.Id, topics.MemberId, topics.CategoryId, topics.Views, topics.Name, topics.CreateDate, listOfPostsInTopic, topics.Member.UserName, topics.Member.DateCreated);
         }
 
         #endregion
@@ -82,7 +82,7 @@ namespace UmderlakareUmbCms.Business.Services
                     listOfPostsInTopic.Add(po);
                 }
                 var memberInTopic = _memberService.GetMemberById(topic.MemberId);
-                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
+                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName, memberInTopic.DateCreated);
                 listOfTopics.Add(topi);
             }
             return listOfTopics.ToList();
@@ -106,7 +106,7 @@ namespace UmderlakareUmbCms.Business.Services
                     listOfPostsInTopic.Add(po);
                 }
                 var memberInTopic = _memberService.GetMemberById(topic.MemberId);
-                var customTopic = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
+                var customTopic = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName, memberInTopic.DateCreated);
                 topicList.Add(customTopic);
 
             }

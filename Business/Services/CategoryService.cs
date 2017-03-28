@@ -67,7 +67,7 @@ namespace UmderlakareUmbCms.Business.Services
 
 
                             var memberInTopic = _memberService.GetMemberById(topic.MemberId);
-                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
+                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName, memberInTopic.DateCreated);
                             listOfTopicsInCategory.Add(topicInCat);    
 
                         }
@@ -150,7 +150,7 @@ namespace UmderlakareUmbCms.Business.Services
                             }
 
                             var memberInTopic = _memberService.GetMemberById(topic.MemberId);
-                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
+                            var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName, memberInTopic.DateCreated);
                             listOfTopicsInCategory.Add(topicInCat);
 
                         }
@@ -221,7 +221,7 @@ namespace UmderlakareUmbCms.Business.Services
 
 
                         var memberInTopic = _memberService.GetMemberById(topic.MemberId);
-                        var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
+                        var topicInCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName, memberInTopic.DateCreated);
                         listOfTopicsInCategory.Add(topicInCat);
 
                     }
@@ -282,7 +282,7 @@ namespace UmderlakareUmbCms.Business.Services
                     listOfPostsInTopic.Add(postInTopic);
                 }
                 var memberInTopic = _memberService.GetMemberById(topic.MemberId);
-                var topicInSubCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName);
+                var topicInSubCat = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPostsInTopic, memberInTopic.UserName, memberInTopic.DateCreated);
                 listOfTopicsInCategory.Add(topicInSubCat);
             }
 

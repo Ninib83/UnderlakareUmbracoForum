@@ -35,7 +35,7 @@ namespace UmderlakareUmbCms.Business.Entities
                 }
                 // behöver ha med username
                 //var memberInTopic = _memberService.GetMemberById(topic.MemberId);
-                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPosts, topic.Member.UserName);
+                var topi = new Topic(topic.Id, topic.MemberId, topic.CategoryId, topic.Views, topic.Name, topic.CreateDate, listOfPosts, topic.Member.UserName, topic.Member.DateCreated);
                 listOfTopicInCat.Add(topi);
                
             }
