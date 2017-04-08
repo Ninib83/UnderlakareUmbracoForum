@@ -164,4 +164,3 @@ C:\Users\ninibozmen\Documents\Visual Studio 2015\Projects\UmderlakareUmbCms\Umde
 C:\Users\ninibozmen\Documents\Visual Studio 2015\Projects\UmderlakareUmbCms\UmderlakareUmbCms\bin\System.Reflection.Metadata.dll
 C:\Users\ninibozmen\Documents\Visual Studio 2015\Projects\UmderlakareUmbCms\UmderlakareUmbCms\obj\Debug\UmderlakareUmbCms.dll
 C:\Users\ninibozmen\Documents\Visual Studio 2015\Projects\UmderlakareUmbCms\UmderlakareUmbCms\obj\Debug\UmderlakareUmbCms.pdb
-C:\Users\ninibozmen\Documents\Visual Studio 2015\Projects\UmderlakareUmbCms\UmderlakareUmbCms\obj\Debug\UmderlakareUmbCms.csprojResolveAssemblyReference.cache

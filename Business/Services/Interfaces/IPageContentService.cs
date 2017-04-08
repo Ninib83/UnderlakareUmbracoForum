@@ -11,7 +11,7 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
     public interface IPageContentService
     {
         IPageContent GetById(Guid Key);
-        IPageContent GetLandstingById(Guid Key);
+        ILandstingPageContent GetLandstingById(Guid Key);
         IPageContent GetAtTjanstById(Guid Key);
     }
 }

@@ -3289,9 +3289,9 @@
     <Compile Include="Business\Entities\Category.cs" />
     <Compile Include="Business\Entities\ChildPropertie.cs" />
     <Compile Include="Business\Entities\ChildPropertieChild.cs" />
-    <Compile Include="Business\Entities\ILansting.cs" />
     <Compile Include="Business\Entities\Interfaces\IChildPropertieChild.cs" />
     <Compile Include="Business\Entities\Interfaces\IChildPropertie.cs" />
+    <Compile Include="Business\Entities\Interfaces\ILandstingPageContent.cs" />
     <Compile Include="Business\Entities\Interfaces\IPageContent.cs" />
     <Compile Include="Business\Entities\Interfaces\IPostPaging.cs" />
     <Compile Include="Business\Entities\Interfaces\IPropertieT.cs" />
@@ -3329,7 +3329,7 @@
     <Compile Include="Business\Entities\ViewModel\LoginMemberViewModel.cs" />
     <Compile Include="Business\Entities\ViewModel\RegisterMemberViewModel.cs" />
     <Compile Include="Business\Helpers\PagingHelper.cs" />
-    <Compile Include="Business\Lansting.cs" />
+    <Compile Include="Business\LandstingPageContent.cs" />
     <Compile Include="Business\Registries\IncludeInApiExplorerAttribute.cs" />
     <Compile Include="Business\Registries\OptInApiExplorer.cs" />
     <Compile Include="Business\Services\CategoryService.cs" />

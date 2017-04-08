@@ -13,54 +13,6 @@ namespace UmderlakareUmbCms.Business.Services
 {
     public class PageContentService : IPageContentService
     {
-        #region list of properties
-
-        public IPageContent GetById(Guid Key)
-        {
-            var page = ApplicationContext.Current.Services.ContentService.GetById(Key);
-
-            List<PropertieT> listOfProperties = new List<PropertieT>();
-
-            foreach (var propertieType in page.PropertyTypes)
-            {
-                foreach (var propValue in page.Properties)
-                {
-                    if (propValue.Alias == propertieType.Alias)
-                    {
-                        var properties = new PropertieT(propertieType.Id, propertieType.Name, propValue.Value);
-                        listOfProperties.Add(properties);
-                    }
-                }
-            }
-            return new PageContent(page.Key, page.Name, listOfProperties, null);
-        }
-
-        #endregion
-
-        #region list of landsting
-
-        public IPageContent GetLandstingById(Guid Key)
-        {
-            var page = ApplicationContext.Current.Services.ContentService.GetById(Key);
-
-            List<PropertieT> listOfProperties = new List<PropertieT>();
-
-            foreach (var propertieType in page.PropertyTypes)
-            {
-                foreach (var propValue in page.Properties)
-                {
-                    if (propValue.Alias == propertieType.Alias)
-                    {
-                        var properties = new PropertieT(propertieType.Id, propertieType.Name, propValue.Value);
-                        listOfProperties.Add(properties);
-                    }
-                }
-            }
-            return new PageContent(page.Key, page.Name, listOfProperties, null);
-
-        }
-
-        #endregion
 
         #region list of At tjänst
 
@@ -122,6 +74,84 @@ namespace UmderlakareUmbCms.Business.Services
             }
             return new PageContent(page.Key, page.Name, listOfProperties, listOfChildProperties);
 
+        }
+
+        #endregion
+
+        #region list of landsting
+
+        public ILandstingPageContent GetLandstingById(Guid Key)
+        {
+            var page = ApplicationContext.Current.Services.ContentService.GetById(Key);
+
+            List<PropertieT> listOfProperties = new List<PropertieT>();
+            List<PropertieT> listOfChildProperties = new List<PropertieT>();
+            List<ChildPropertieChild> listOfChildInChild = new List<ChildPropertieChild>();
+
+
+            foreach (var propertieType in page.PropertyTypes)
+            {
+                foreach (var propValue in page.Properties)
+                {
+                    if (propValue.Alias == propertieType.Alias)
+                    {
+                        var properties = new PropertieT(propertieType.Id, propertieType.Name, propValue.Value);
+                        listOfProperties.Add(properties);
+                    }
+                }
+
+            }
+
+            foreach (var child in page.Children())
+            {
+                foreach (var propertyType in page.PropertyTypes)
+                {
+                    foreach (var pChild in child.PropertyTypes)
+                    {
+                        foreach (var item in child.Properties)
+                        {
+                            if (item.Alias == pChild.Alias)
+                            {
+                                var properties = new PropertieT(pChild.Id, pChild.Name, item.Value);
+                                listOfChildProperties.Add(properties);
+                            }
+
+                        }
+
+                    }
+
+                    var c = new ChildPropertieChild(child.Id, child.Name, listOfChildProperties);
+                    listOfChildInChild.Add(c);
+                }
+            }
+
+
+            return new LandstingPageContent(page.Key, page.Name, listOfProperties, listOfChildInChild);
+
+        }
+
+        #endregion
+
+        #region list of properties
+
+        public IPageContent GetById(Guid Key)
+        {
+            var page = ApplicationContext.Current.Services.ContentService.GetById(Key);
+
+            List<PropertieT> listOfProperties = new List<PropertieT>();
+
+            foreach (var propertieType in page.PropertyTypes)
+            {
+                foreach (var propValue in page.Properties)
+                {
+                    if (propValue.Alias == propertieType.Alias)
+                    {
+                        var properties = new PropertieT(propertieType.Id, propertieType.Name, propValue.Value);
+                        listOfProperties.Add(properties);
+                    }
+                }
+            }
+            return new PageContent(page.Key, page.Name, listOfProperties, null);
         }
 
         #endregion
