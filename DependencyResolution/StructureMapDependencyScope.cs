@@ -134,7 +134,7 @@ namespace UmderlakareUmbCms.DependencyResolution {
             }
             if (string.IsNullOrEmpty(key))
             {
-                return serviceType.IsAbstract || serviceType.IsInterface
+               return serviceType.IsAbstract || serviceType.IsInterface
                    ? container.TryGetInstance(serviceType)
                    : container.GetInstance(serviceType);
             }

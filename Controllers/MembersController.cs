@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Web.Http;
+using UmderlakareUmbCms.Business.Entities;
 using UmderlakareUmbCms.Business.Entities.ViewModel;
 using UmderlakareUmbCms.Business.Registries;
 using UmderlakareUmbCms.Business.Services.Interfaces;
@@ -69,6 +70,31 @@ namespace UmderlakareUmbCms.Controllers
                 Console.WriteLine(ex);
                 return Content(HttpStatusCode.InternalServerError, "Något har hänt!");
             }
+
+
+
+        }
+
+                [HttpGet]
+        [Route("member/isLoggedIn")]
+        public IHttpActionResult IsLoggedIn()
+        {
+            try
+            {
+  
+               bool status = _membersService.IsLoggedIn();
+
+
+                return Content(HttpStatusCode.OK, status);
+            }
+            catch (Exception)
+            {
+
+
+                return Content(HttpStatusCode.InternalServerError, "something went wrong");
+            }
+
+
         }
 
         #endregion
@@ -96,6 +122,8 @@ namespace UmderlakareUmbCms.Controllers
 
 
         }
+
+
 
         [HttpPost]
         [Route("member/logout")]

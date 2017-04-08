@@ -13,10 +13,10 @@ namespace UmderlakareUmbCms.Business.Services.Interfaces
         IMember GetMemberById(int id);
         IMember GetMemberByUsername(string username);
         IMember GetMemberByEmail(string email);
-
         void ResetPassword(Dialogue.Logic.Models.Member member, string newPassword);
         void Register(RegisterMemberViewModel vm);
         void Login(LoginMemberViewModel vm);
         void LogOff();
+        bool IsLoggedIn();
     }
 }

@@ -23,7 +23,7 @@ namespace UmderlakareUmbCms.Controllers
 
         [HttpGet]
         [Route("recentTopics")]
-        public IHttpActionResult GetRecentTopics([FromUri] int page = 1, [FromUri]int pageSize = 10)
+        public IHttpActionResult GetRecentTopics([FromUri] int page = 1, [FromUri]int pageSize = 5)
         {
             try
             {

@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4be297e0cdc4cc27")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b2044bbbda4881be")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -863,6 +863,210 @@ namespace Umbraco.Web.PublishedContentModels
 		public string UmbracoUrlname
 		{
 			get { return this.GetPropertyValue<string>("umbracoURLName"); }
+		}
+	}
+
+	/// <summary>AT-tjänst</summary>
+	[PublishedContentModel("aTTjaenst")]
+	public partial class ATtjaenst : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "aTTjaenst";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ATtjaenst(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ATtjaenst, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Info
+		///</summary>
+		[ImplementPropertyType("info")]
+		public IHtmlString Info
+		{
+			get { return this.GetPropertyValue<IHtmlString>("info"); }
+		}
+	}
+
+	/// <summary>Landsting</summary>
+	[PublishedContentModel("landsting")]
+	public partial class Landsting : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "landsting";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Landsting(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Landsting, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Info
+		///</summary>
+		[ImplementPropertyType("info")]
+		public IHtmlString Info
+		{
+			get { return this.GetPropertyValue<IHtmlString>("info"); }
+		}
+	}
+
+	/// <summary>Information per AT-sjukhus</summary>
+	[PublishedContentModel("informationPerATSjukhus")]
+	public partial class InformationPerAtsjukhus : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "informationPerATSjukhus";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public InformationPerAtsjukhus(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<InformationPerAtsjukhus, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Betald AT-stämma
+		///</summary>
+		[ImplementPropertyType("betaldATStaemma")]
+		public string BetaldAtstaemma
+		{
+			get { return this.GetPropertyValue<string>("betaldATStaemma"); }
+		}
+
+		///<summary>
+		/// Ensam på nattjour
+		///</summary>
+		[ImplementPropertyType("ensamPaaNattjour")]
+		public string EnsamPaaNattjour
+		{
+			get { return this.GetPropertyValue<string>("ensamPaaNattjour"); }
+		}
+
+		///<summary>
+		/// Hjälp att hitta boende
+		///</summary>
+		[ImplementPropertyType("hjaelpAttHittaBoende")]
+		public string HjaelpAttHittaBoende
+		{
+			get { return this.GetPropertyValue<string>("hjaelpAttHittaBoende"); }
+		}
+
+		///<summary>
+		/// Ingångslön
+		///</summary>
+		[ImplementPropertyType("ingaangsloen")]
+		public string Ingaangsloen
+		{
+			get { return this.GetPropertyValue<string>("ingaangsloen"); }
+		}
+
+		///<summary>
+		/// Ledarskapsutbildning
+		///</summary>
+		[ImplementPropertyType("ledarskapsutbildning")]
+		public string Ledarskapsutbildning
+		{
+			get { return this.GetPropertyValue<string>("ledarskapsutbildning"); }
+		}
+
+		///<summary>
+		/// Möjlighet till vikariat
+		///</summary>
+		[ImplementPropertyType("moejlighetTillVikariat")]
+		public string MoejlighetTillVikariat
+		{
+			get { return this.GetPropertyValue<string>("moejlighetTillVikariat"); }
+		}
+
+		///<summary>
+		/// Övrigt
+		///</summary>
+		[ImplementPropertyType("oevrigt")]
+		public IHtmlString Oevrigt
+		{
+			get { return this.GetPropertyValue<IHtmlString>("oevrigt"); }
+		}
+
+		///<summary>
+		/// Ort
+		///</summary>
+		[ImplementPropertyType("ort")]
+		public string Ort
+		{
+			get { return this.GetPropertyValue<string>("ort"); }
+		}
+
+		///<summary>
+		/// Personalbostad
+		///</summary>
+		[ImplementPropertyType("personalbostad")]
+		public string Personalbostad
+		{
+			get { return this.GetPropertyValue<string>("personalbostad"); }
+		}
+
+		///<summary>
+		/// ST-lön
+		///</summary>
+		[ImplementPropertyType("sTLoen")]
+		public string STloen
+		{
+			get { return this.GetPropertyValue<string>("sTLoen"); }
+		}
+
+		///<summary>
+		/// ST-tjänster erbjuds
+		///</summary>
+		[ImplementPropertyType("sTTjaensterErbjuds")]
+		public string STtjaensterErbjuds
+		{
+			get { return this.GetPropertyValue<string>("sTTjaensterErbjuds"); }
+		}
+
+		///<summary>
+		/// Upptagningsområde
+		///</summary>
+		[ImplementPropertyType("upptagningsomraade")]
+		public string Upptagningsomraade
+		{
+			get { return this.GetPropertyValue<string>("upptagningsomraade"); }
 		}
 	}
 

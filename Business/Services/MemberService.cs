@@ -41,20 +41,34 @@ namespace UmderlakareUmbCms.Business.Services
 
         #endregion
 
-
-        #region Login
-        public void Login(LoginMemberViewModel vm)
+        //Klar
+        #region IsLoggedIn
+        public bool IsLoggedIn()
         {
+            
+            bool status = membershipHelper.IsLoggedIn();
 
-            if (membershipHelper.Login(vm.UserName, vm.Password))
-            {
-                membershipHelper.GetCurrentLoginStatus();
-                bool status = membershipHelper.IsLoggedIn();
-            }
+            return status;
+
+
         }
 
         #endregion
 
+        //Klar
+        #region Login
+        public void Login(LoginMemberViewModel vm)
+        {
+
+                membershipHelper.Login(vm.UserName, vm.Password);
+            
+            
+
+        }
+
+        #endregion
+
+        //Kalr
         #region LogOut
         public void LogOff()
         {
@@ -65,13 +79,15 @@ namespace UmderlakareUmbCms.Business.Services
             }
 
         }
+
         #endregion
 
-        #region Reset  Password
+        #region Reset Password
 
 
         public void ResetPassword(Dialogue.Logic.Models.Member member, string newPassword)
         {
+
             var reset = _memberService.ResetPassword(member, newPassword);
         }
 

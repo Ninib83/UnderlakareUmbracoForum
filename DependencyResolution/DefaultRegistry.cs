@@ -17,30 +17,37 @@
 
 namespace UmderlakareUmbCms.DependencyResolution {
     using Business.Services;
+    using Controllers;
     using StructureMap;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
+    using System.Web.Http;
+    using Umbraco.Core;
+    using Umbraco.Web;
     using UmderlakareUmbCms.Business.Services.Interfaces;
 
     public class DefaultRegistry : Registry {
-        #region Constructors and Destructors
+		#region Constructors and Destructors
 
-        public DefaultRegistry() {
-            Scan(
-                scan => {
-                    scan.TheCallingAssembly();
-                    scan.WithDefaultConventions();
-					scan.With(new ControllerConvention());
-                });
-            //For<IExample>().Use<Example>();
+		public DefaultRegistry() {
+			Scan(
+				scan => {
+					scan.TheCallingAssembly();
+					scan.WithDefaultConventions();
+					//scan.With(new ControllerConvention());
+				});
+			//For<IExample>().Use<Example>();
+			For<IMembersService>().Use<MemberService>();
+			For<ICategorysService>().Use<CategoryService>();
+			For<ITopicsService>().Use<TopicService>();
+			For<IPostsService>().Use<PostService>();
+            For<IPageContentService>().Use<PageContentService>();
+            //For<UmbracoContext>().Use(UmbracoContext.Current);
+            //For<ApplicationContext>().Use(ApplicationContext.Current);
 
-            For<IMembersService>().Use<MemberService>();
-            For<ICategorysService>().Use<CategoryService>();
-            For<ITopicsService>().Use<TopicService>();
-            For<IPostsService>().Use<PostService>();
 
         }
 
-        #endregion
-    }
+		#endregion
+	}
 }
